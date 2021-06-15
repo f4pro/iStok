@@ -1,3 +1,6 @@
 # iStok - Product Management
 
-Masih coba-coba
+Assets -> Buat dashboard
+Assets_2 -> Buat login page
+
+Blom jadi, tapi coba kita atur dashboardnya :)
