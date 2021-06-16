@@ -351,10 +351,10 @@
             </a>
           </li>
         </ul>
-        <div class="btn-box w-100 mt-4 mb-1">
+        <!-- <div class="btn-box w-100 mt-4 mb-1">
           <a href="https://themeforest.net/item/tinydash-bootstrap-html-admin-dashboard-template/27511269" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
             <i class="fe fe-shopping-cart fe-12 mx-2"></i><span class="small">Buy now</span>
-          </a>
+          </a> -->
         </div>
       </nav>
     </aside>
