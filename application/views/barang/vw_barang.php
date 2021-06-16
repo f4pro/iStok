@@ -1,7 +1,9 @@
 <div class="col-md-6 my-4">
   <h1 class="page-title"><?php echo $judul; ?></h1>
+  <div class="col-md-6"><a href="<?= base_url() ?>barang/tambah" class="btn btn-info mb-4">Tambah Dosen</a></div>
   <div class="card shadow">
     <div class="card-body">
+    
       <h5 class="card-title">Simple Table</h5>
       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
       <table class="table table-hover">
