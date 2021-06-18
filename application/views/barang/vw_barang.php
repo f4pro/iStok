@@ -21,11 +21,11 @@
             <tbody>
 
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>Barang_test</td>
+                <td>Jenis_Test</td>
+                <td>999</td>
+                <td>gambar_test</td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
