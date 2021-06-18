@@ -32,37 +32,37 @@
       </form>
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
+          <a class="nav-link text-muted my-2" href="<?php echo site_url('barang/'); ?>" id="modeSwitcher" data-mode="light">
             <i class="fe fe-sun fe-16"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+          <a class="nav-link text-muted my-2" href="./<?php echo site_url('barang/'); ?>" data-toggle="modal" data-target=".modal-shortcut">
             <span class="fe fe-grid fe-16"></span>
           </a>
         </li>
         <li class="nav-item nav-notif">
-          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+          <a class="nav-link text-muted my-2" href="./<?php echo site_url('barang/'); ?>" data-toggle="modal" data-target=".modal-notif">
             <span class="fe fe-bell fe-16"></span>
             <span class="dot dot-md bg-success"></span>
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link text-muted pr-0" href="<?php echo site_url('barang/'); ?>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
               <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Profile</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Activities</a>
+            <a class="dropdown-item" href="<?php echo site_url('barang/'); ?>">Profile</a>
+            <a class="dropdown-item" href="<?php echo site_url('barang/'); ?>">Settings</a>
+            <a class="dropdown-item" href="<?php echo site_url('barang/'); ?>">Activities</a>
           </div>
         </li>
       </ul>
     </nav>
     <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
-      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+      <a href="<?php echo site_url('barang/'); ?>" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
         <i class="fe fe-x"><span class="sr-only"></span></i>
       </a>
       <nav class="vertnav navbar navbar-light">
@@ -79,7 +79,7 @@
           </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-home fe-16"></i>
             <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
           </a>
@@ -88,29 +88,29 @@
           <span>Santapan Harian</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-box fe-16"></i>
             <span class="ml-3 item-text">Barang</span>
           </a>
-          <a href="#" class="nav-link" href="widgets.html">
+          <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
             <i class="fe fe-users fe-16"></i>
             <span class="ml-3 item-text">Karyawan</span>
           </a>
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('record_in/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-chevrons-down fe-16"></i>
             <span class="ml-3 item-text">Rec-In</span>
           </a>
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('record_out/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-chevrons-up fe-16"></i>
             <span class="ml-3 item-text">Rec-Out</span>
           </a>
-          <!-- <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <!-- <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-pie-chart fe-16"></i>
             <span class="ml-3 item-text">Charts</span>
           </a> -->
         </ul>
         <div class="btn-box w-100 mt-4 mb-1">
-          <a href="#" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
+          <a href="<?php echo site_url('barang/'); ?>" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
             <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
           </a>
         </div>
