@@ -14,6 +14,7 @@
             <th>Jenis Barang</th>
             <th>Stok Barang</th>
             <th>Gambar</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -37,4 +38,5 @@
       </table>
     </div>
   </div>
+</div>
 </div>
