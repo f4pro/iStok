@@ -1,5 +1,5 @@
-<div class="col-md-6 my-4">
-<div id="dataTable-1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+<div class="card-body">
+  <div id="dataTable-1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
     <div class="col-sm-12">
       <h1 class="page-title"><?php echo $judul; ?></h1>
       <a href="<?= base_url() ?>record_out/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Barang</a>
