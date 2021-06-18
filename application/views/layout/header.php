@@ -24,14 +24,14 @@
 <body class="vertical  light  ">
   <div class="wrapper">
     <nav class="topnav navbar navbar-light">
-      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
-        <i class="fe fe-menu navbar-toggler-icon"></i>
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar" disabled>
+        <i class="fe fe-smile navbar-toggler-icon"></i>
       </button>
-      <form class="form-inline mr-auto searchform text-muted">
-        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
+      <form class="form-inline mr-auto text-muted">
+        <input class="form-control mr-sm-2 bg-transparent border-0 text-muted" type="search" placeholder="Keep moving forward!" aria-label="Search" disabled>
       </form>
       <ul class="nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
             <i class="fe fe-sun fe-16"></i>
           </a>
@@ -46,18 +46,17 @@
             <span class="fe fe-bell fe-16"></span>
             <span class="dot dot-md bg-success"></span>
           </a>
-        </li>
+        </li> -->
+        <!-- <li class="nav-item nav-notif">
+          <input class="nav-link mr-sm-2 bg-transparent border-0 text-muted my-2" type="search" placeholder="Keep moving forward!" aria-label="Search" disabled>
+        </li> -->
         <li class="nav-item dropdown">
-          <a class="nav-link text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
               <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
             </span>
+            Username
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Profile</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Activities</a>
-          </div>
         </li>
       </ul>
     </nav>
@@ -68,7 +67,7 @@
       <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="#">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="<?php echo site_url('dashboard/'); ?>">
             <!-- <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
               <g>
                 <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
@@ -76,11 +75,11 @@
                 <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
               </g>
             </svg> -->
-            <img src="<?= base_url('assets/') ?>/assets/images/logo.svg" alt="iStok"/>
+            <img src="<?= base_url('assets/') ?>/assets/images/logo.svg" alt="iStok" />
           </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('dashboard/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-home fe-16"></i>
             <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
           </a>
@@ -93,16 +92,20 @@
             <i class="fe fe-box fe-16"></i>
             <span class="ml-3 item-text">Barang</span>
           </a>
+          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <i class="fe fe-user fe-16"></i>
+            <span class="ml-3 item-text">User</span>
+          </a>
           <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
             <i class="fe fe-users fe-16"></i>
             <span class="ml-3 item-text">Karyawan</span>
           </a>
           <a href="<?php echo site_url('record_in/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-chevrons-down fe-16"></i>
+            <i class="fe fe-download fe-16"></i>
             <span class="ml-3 item-text">Rec-In</span>
           </a>
           <a href="<?php echo site_url('record_out/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-chevrons-up fe-16"></i>
+            <i class="fe fe-share fe-16"></i>
             <span class="ml-3 item-text">Rec-Out</span>
           </a>
           <!-- <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">

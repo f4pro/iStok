@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Barang extends CI_Controller
+class Dashboard extends CI_Controller
 {
     public function __construct()
     {
@@ -8,9 +8,9 @@ class Barang extends CI_Controller
     }
     function index()
     {
-        $data['judul'] = "Barang";
+        // $data['judul'] = "Barang";
         $this->load->view("layout/header");
-        $this->load->view("dashboard/vw_dashboard", $data);
+        $this->load->view("dashboard/vw_dashboard");
         $this->load->view("layout/footer");
     }
 }
