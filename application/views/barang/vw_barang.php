@@ -9,12 +9,11 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Company</th>
-            <th>Address</th>
-            <th>Date</th>
-            <th>Status</th>
+            <th>No</th>
+            <th>Nama Barang</th>
+            <th>Jenis Barang</th>
+            <th>Stok Barang</th>
+            <th>Gambar</th>
           </tr>
         </thead>
         <tbody>
