@@ -14,7 +14,7 @@ class User extends CI_Controller
         $this->load->view("layout/footer");
     }
     function tambah(){
-        $data['judul'] = "Halaman Tambah Barang";
+        $data['judul'] = "Halaman Tambah User";
         $this->load->view("layout/header");
         $this->load->view("user/vw_tambah_user", $data);
         $this->load->view("layout/footer");
