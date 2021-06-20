@@ -92,7 +92,7 @@
             <i class="fe fe-box fe-16"></i>
             <span class="ml-3 item-text">Barang</span>
           </a>
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('user/')?>" aria-expanded="false" class="nav-link">
             <i class="fe fe-user fe-16"></i>
             <span class="ml-3 item-text">User</span>
           </a>
@@ -100,15 +100,15 @@
             <i class="fe fe-users fe-16"></i>
             <span class="ml-3 item-text">Karyawan</span>
           </a>
-          <a href="<?php echo site_url('record_in/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
             <i class="fe fe-download fe-16"></i>
             <span class="ml-3 item-text">Rec-In</span>
           </a>
-          <a href="<?php echo site_url('record_out/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
             <i class="fe fe-share fe-16"></i>
             <span class="ml-3 item-text">Rec-Out</span>
           </a>
-          <!-- <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <!-- <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-pie-chart fe-16"></i>
             <span class="ml-3 item-text">Charts</span>
           </a> -->
