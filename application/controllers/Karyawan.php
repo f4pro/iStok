@@ -9,13 +9,13 @@ class Karyawan extends CI_Controller
     function index()
     {
         $data['judul'] = "Karyawan";
-        $this->load->view("layout/header");
+        $this->load->view("layout/header", $data);
         $this->load->view("karyawan/vw_karyawan", $data);
         $this->load->view("layout/footer");
     }
     function tambah(){
         $data['judul'] = "Penambahan Karyawan";
-        $this->load->view("layout/header");
+        $this->load->view("layout/header", $data);
         $this->load->view("karyawan/vw_tambah_karyawan", $data);
         $this->load->view("layout/footer");
     }

@@ -8,8 +8,8 @@ class Dashboard extends CI_Controller
     }
     function index()
     {
-        // $data['judul'] = "Barang";
-        $this->load->view("layout/header");
+        $data['judul'] = "Dashboard";
+        $this->load->view("layout/header", $data);
         $this->load->view("dashboard/vw_dashboard");
         $this->load->view("layout/footer");
     }
