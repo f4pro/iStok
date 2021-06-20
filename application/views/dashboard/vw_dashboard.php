@@ -5,7 +5,6 @@
                 <h1 class="page-title">This is Dashboard, but still in development.. Be patient :P</h1>
                 <h4 class="page-title">~ Faizil</h4>
             </div>
-
         </div>
     </div>
 </div>
