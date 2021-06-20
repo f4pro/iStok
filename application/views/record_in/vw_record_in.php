@@ -17,7 +17,7 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Tanggal Keluar</th>
+                <th>Tanggal Masuk</th>
                 <th>Barang</th>
                 <th>Stok</th>
                 <th>Pemeriksa</th>

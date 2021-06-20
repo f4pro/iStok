@@ -17,6 +17,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th>Gambar</th>
                 <th>Nama</th>
                 <th>NIK</th>
                 <th>Alamat</th>
@@ -28,6 +29,7 @@
             <tbody>
 
               <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
