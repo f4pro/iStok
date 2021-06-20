@@ -8,13 +8,13 @@ class Record_in extends CI_Controller
     }
     function index()
     {
-        $data['judul'] = "Halaman Record In";
+        $data['judul'] = "Record In";
         $this->load->view("layout/header");
         $this->load->view("record_in/vw_record_in", $data);
         $this->load->view("layout/footer");
     }
     function tambah(){
-        $data['judul'] = "Halaman Tambah Barang";
+        $data['judul'] = "Record In Barang";
         $this->load->view("layout/header");
         $this->load->view("record_in/vw_tambah_record_in", $data);
         $this->load->view("layout/footer");

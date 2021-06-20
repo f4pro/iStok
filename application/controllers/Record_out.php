@@ -8,13 +8,13 @@ class Record_out extends CI_Controller
     }
     function index()
     {
-        $data['judul'] = "Halaman Record Out";
+        $data['judul'] = "Record Out";
         $this->load->view("layout/header");
         $this->load->view("record_out/vw_record_out", $data);
         $this->load->view("layout/footer");
     }
     function tambah(){
-        $data['judul'] = "Halaman Tambah Barang";
+        $data['judul'] = "Record Out Barang";
         $this->load->view("layout/header");
         $this->load->view("record_out/vw_tambah_record_out", $data);
         $this->load->view("layout/footer");

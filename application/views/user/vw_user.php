@@ -12,15 +12,15 @@
       <div class="card shadow">
         <div class="card-body">
 
-          <h5 class="card-title"> Tabel Barang</h5>
+          <h5 class="card-title"></h5>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Nama Barang</th>
-                <th>Jenis Barang</th>
-                <th>Stok Barang</th>
-                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Status</th>
                 <th>Aksi</th>
               </tr>
             </thead>
