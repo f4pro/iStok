@@ -75,7 +75,7 @@
                 <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
               </g>
             </svg> -->
-            <img src="<?= base_url('assets/') ?>/assets/images/logo.svg" alt="iStok" />
+            <img src="<?= base_url('assets/') ?>/assets/images/istok.png" alt="iStok" />
           </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
