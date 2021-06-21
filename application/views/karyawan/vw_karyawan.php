@@ -17,30 +17,32 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Gambar</th>
-                <th>Nama</th>
-                <th>NIK</th>
+                <th>Profil</th>
+                <th>Nama Karyawan</th>
                 <th>Alamat</th>
-                <th>No Telepon</th>
+                <th>No Hp/Telp</th>
                 <th>Usia</th>
+                <th>NIK</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($karyawan as $kr) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $i; ?></td>
+                <td><img src="<?= base_url('assets/karyawan/'). $kr['gambar']; ?>" style="width:100px" class="img-thumbnail"></td>
+                <td><?= $kr['nama_karyawan'] ?></td>
+                <td><?= $kr['alamat'] ?></td>
+                <td><?= $kr['notelp'] ?></td>
+                <td><?= $kr['usia'] ?></td>
+                <td><?= $kr['NIK'] ?></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>

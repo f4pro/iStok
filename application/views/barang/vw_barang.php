@@ -9,7 +9,6 @@
           <a href="<?= base_url() ?>barang/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Barang</a>
         </div>
       </div>
-
       <div class="card shadow">
         <div class="card-body">
 
@@ -26,18 +25,20 @@
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($barang as $br) : ?>
               <tr>
-                <td>1</td>
-                <td>Barang_test</td>
-                <td>Jenis_Test</td>
-                <td>999</td>
-                <td>gambar_test</td>
+                <td><?= $i; ?></td>
+                <td><?= $br['nama_barang'] ?></td>
+                <td><?= $br['jenis_barang'] ?></td>
+                <td><?= $br['stok'] ?></td>
+                <td><img src="<?= base_url('assets/barang/'). $br['gambar']; ?>" style="width:100px" class="img-thumbnail"></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>

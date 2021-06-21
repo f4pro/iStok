@@ -25,18 +25,20 @@
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($record_in as $ri) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $i; ?></td>
+                <td><?= $ri['tanggal_masuk'] ?></td>
+                <td><?= $ri['nama_barang'] ?></td>
+                <td><?= $ri['stok'] ?></td>
+                <td><?= $ri['pemeriksa'] ?></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>

@@ -5,10 +5,12 @@ class Barang extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Barang_model');
     }
     function index()
     {
         $data['judul'] = "Halaman Barang";
+        $data['barang'] = $this->Barang_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("barang/vw_barang", $data);
         $this->load->view("layout/footer");

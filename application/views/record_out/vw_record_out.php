@@ -25,18 +25,21 @@
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($record_out as $ro) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr>
+              <td><?= $i; ?></td>
+                <td><?= $ro['tanggal_keluar'] ?></td>
+                <td><?= $ro['barang'] ?></td>
+                <td><?= $ro['stok'] ?></td>
+                <td><?= $ro['pekerja'] ?></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>

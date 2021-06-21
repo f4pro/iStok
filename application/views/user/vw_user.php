@@ -25,18 +25,20 @@
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($user as $ur) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $i; ?></td>
+                <td><?= $ur['nama'] ?></td>
+                <td><?= $ur['email'] ?></td>
+                <td><?= $ur['password'] ?></td>
+                <td><?= $ur['status'] ?></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>
