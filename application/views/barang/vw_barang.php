@@ -34,8 +34,8 @@
                 <td><?= $br['stok'] ?></td>
                 <td><img src="<?= base_url('assets/barang/'). $br['gambar']; ?>" style="width:100px" class="img-thumbnail"></td>
                 <td>
-                  <a href=" " class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('barang/hapus/') . $br['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
+                  <a href="<?= base_url('barang/edit/') . $br['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>
