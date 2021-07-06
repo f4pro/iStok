@@ -14,6 +14,12 @@ class User_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function getBy(){
+        $this->db->from($this->table);
+        $this->db->where('email',$this->session->userdata('email'));
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     public function getById($id)
     {
         $this->db->select('barang.* , prodi.nama as prodi');
