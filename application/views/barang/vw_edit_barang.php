@@ -45,9 +45,6 @@
           </div> <!-- /. card -->
         </div> <!-- /. col -->
       </div>
-<<<<<<< HEAD
     </div>
+  </div>
 </div>
-=======
-    </div>
->>>>>>> bf3fe5dccc23bac137d226c7063254c1a2b2fdac
