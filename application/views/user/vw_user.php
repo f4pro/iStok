@@ -34,8 +34,8 @@
                 <td><?= $ur['password'] ?></td>
                 <td><?= $ur['status'] ?></td>
                 <td>
-                  <a href=" " class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('user/hapus/') . $ur['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
+                  <a href="<?= base_url('user/edit/') . $ur['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>
