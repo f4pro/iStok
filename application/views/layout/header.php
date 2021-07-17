@@ -78,12 +78,12 @@
             <img src="<?= base_url('assets/') ?>/assets/images/istok.png" alt="iStok" />
           </a>
         </div>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
+        <!-- <ul class="navbar-nav flex-fill w-100 mb-2">
           <a href="<?php echo site_url('dashboard/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-home fe-16"></i>
             <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
           </a>
-        </ul>
+        </ul> -->
         <p class="text-muted nav-heading mt-4 mb-1">
           <span>Santapan Harian</span>
         </p>

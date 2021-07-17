@@ -6,7 +6,7 @@
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>record_in/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record In</a>
+          <!-- <a href="<?= base_url() ?>record_in/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record In</a> -->
         </div>
       </div>
       <div class="card shadow">
