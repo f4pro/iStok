@@ -16,10 +16,8 @@ class Karyawan_model extends CI_Model
     }
     public function getById($id)
     {
-        $this->db->select('barang.* , prodi.nama as prodi');
-        $this->db->from('mahasiswa');
-        $this->db->join('prodi','mahasiswa.prodi = prodi.id');
-        $this->db->where('mahasiswa.id', $id);
+        $this->db->from($this->table);
+        $this->db->where('id',$id);
         $query = $this->db->get();
         return $query->row_array();
     }

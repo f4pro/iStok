@@ -38,8 +38,8 @@
                 <td><?= $kr['usia'] ?></td>
                 <td><?= $kr['NIK'] ?></td>
                 <td>
-                  <a href=" " class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('karyawan/hapus/') . $kr['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
+                  <a href="<?= base_url('karyawan/edit/') . $kr['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>

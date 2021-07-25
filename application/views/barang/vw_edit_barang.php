@@ -38,7 +38,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <a href="<? base_url('Barang') ?>" class="btn btn-danger">Kembali</a>
-                    <button type="submit" name="Tambah" class="btn btn-primary">Tambah</button>
+                    <button type="submit" name="Tambah" class="btn btn-primary">Ubah Data</button>
                   </div>
               </form>
             </div> <!-- /. card-body -->

@@ -77,8 +77,31 @@ class Barang extends CI_Controller
                 'jenis_barang' => $this->input->post('jenis_barang'),
                 'stok' => $this->input->post('stok'),
             ];
-            $this->Barang_model->update($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Mahasiswa Berhasil DiUbah!</div>');
+            $upload_image = $_FILES['gambar']['name'];
+            if ($upload_image) {
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = '2048';
+                $config['upload_path'] = './assets/barang/';
+                $this->load->library('upload', $config);
+
+              if ($this->upload->do_upload('gambar')) {
+
+                    $new_image = $this->upload->data('file_name');
+                    $query = $this->db->set('gambar', $new_image);
+
+                    if ($query) {
+                        $old_image = $this->db->get_where('barang', ['id' => $id])->row();
+                        unlink(FCPATH . 'assets/barang/' . $old_image->gambar);
+                    }
+                    
+                    $this->db->set('gambar', $new_image);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+            $id = $this->input->post('id');
+            $this->Barang_model->update(['id' => $id], $data, $upload_image);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil DiUbah!</div>');
             redirect('Barang');
         }
     }
