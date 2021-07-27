@@ -34,8 +34,8 @@
                 <td><?= $ri['stok'] ?></td>
                 <td><?= $ri['pemeriksa'] ?></td>
                 <td>
-                  <a href="<?= base_url('barang/hapus/') . $br['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('Record_in/hapus/') . $ri['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
+                  <a href="<?= base_url('Record_in/edit/') . $ri['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>

@@ -21,6 +21,12 @@ class Record_in extends CI_Controller
         $this->load->view("record_in/vw_tambah_record_in", $data);
         $this->load->view("layout/footer", $data);
     }
+    function hapus($id)
+    {
+        $this->Barang_model->delete($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil Dihapus!</div>');
+        redirect('Barang');
+    }
     function edit($id){
         $data['judul'] = "Halaman Edit Mahasiswa";
         $data['karyawan'] = $this->Karyawan_model->getById($id);
