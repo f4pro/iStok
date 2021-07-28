@@ -10,6 +10,7 @@ class Karyawan extends CI_Controller
     function index()
     {
         $data['judul'] = "Karyawan";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['karyawan'] = $this->Karyawan_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("karyawan/vw_karyawan", $data);
@@ -17,7 +18,8 @@ class Karyawan extends CI_Controller
     }
     function tambah(){
         $data['judul'] = "Halaman Tambah Karyawan";
-       
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $this->form_validation->set_rules('nama_karyawan', 'Nama Karyawan', 'required', ['required' => 'Nama Karyawan Wajib diisi',]);
         $this->form_validation->set_rules('NIK', 'NIK Karyawan', 'required|numeric', ['required' => 'NIK Karyawan Wajib diisi',
                                           'numeric' => 'NIK Karyawan harus angka']);
@@ -70,6 +72,7 @@ class Karyawan extends CI_Controller
     function edit($id){
         $data['judul'] = "Halaman Edit Mahasiswa";
         $data['karyawan'] = $this->Karyawan_model->getById($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_karyawan', 'Nama Karyawan', 'required', ['required' => 'Nama Karyawan Wajib diisi',]);
         $this->form_validation->set_rules('NIK', 'NIK Karyawan', 'required|numeric', ['required' => 'NIK Karyawan Wajib diisi',

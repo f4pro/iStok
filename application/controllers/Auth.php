@@ -66,7 +66,7 @@ class Auth extends CI_Controller
             ];
             $this->userrole->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Account created!</div>');
-            redirect('auth');
+            redirect('Auth');
         }
     }
 
@@ -83,29 +83,29 @@ class Auth extends CI_Controller
                     'id' => $user['id'],
                 ];
                 $this->session->set_userdata($data);
-                if ($user['status'] == 'Admin') {
+                if ($user['status'] == 'admin') {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
                     redirect('Barang');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
-                    redirect('Barang');
+                    redirect('Check_in');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
-                redirect('auth');
+                redirect('Auth');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert"><span class="fe fe-alert-triangle fe-16 mr-2"/>New email, who is this? 
             Try make it one :)</div>');
-            redirect('auth');
+            redirect('Auth');
         }
     }
 
     function logout()
     {
         $this->session->unset_userdata('email');
-        $this->session->unset_userdata('role');
+        $this->session->unset_userdata('status');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logged Out! Come again!</div>');
-        redirect('auth');
+        redirect('Auth');
     }
 }

@@ -10,13 +10,15 @@ class Record_in extends CI_Controller
     function index()
     {
         $data['judul'] = "Record In";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['record_in'] = $this->Record_in_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("record_in/vw_record_in", $data);
-        $this->load->view("layout/footer");
+        $this->load->view("layout/footer", $data);
     }
     function tambah(){
         $data['judul'] = "Record In Barang";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view("layout/header", $data);
         $this->load->view("record_in/vw_tambah_record_in", $data);
         $this->load->view("layout/footer", $data);
@@ -30,6 +32,7 @@ class Record_in extends CI_Controller
     function edit($id){
         $data['judul'] = "Halaman Edit Mahasiswa";
         $data['karyawan'] = $this->Karyawan_model->getById($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_karyawan', 'Nama Karyawan', 'required', ['required' => 'Nama Karyawan Wajib diisi',]);
         $this->form_validation->set_rules('NIK', 'NIK Karyawan', 'required|numeric', ['required' => 'NIK Karyawan Wajib diisi',

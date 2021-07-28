@@ -48,19 +48,9 @@
                             <input type="password" name="password2" class="form-control" id="inputPassword6">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <p class="mb-2">Password requirements</p>
-                        <p class="small text-muted mb-2"> To create a new password, you have to meet all of the following requirements: </p>
-                        <ul class="small text-muted pl-4 mb-0">
-                            <li>-</li>
-                            <li>-</li>
-                            <li>-</li>
-                            <li><b>Just use password manager, b*cth !</b></li>
-                        </ul>
-                    </div>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                <a class="btn btn-lg btn-outlink-link btn-block" href="<?= base_url()?>auth">[ I have one... Take me back! ]</a>
+                <a class="btn btn-lg btn-outlink-link btn-block" href="<?= base_url()?>Auth">[ I have one... Take me back! ]</a>
                 <!-- <p class="mt-5 mb-3 text-muted text-center">© 2020</p> -->
             </form>
         </div>

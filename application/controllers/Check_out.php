@@ -10,6 +10,7 @@ class Check_out extends CI_Controller
     }
 public function barang(){
         $data['judul'] = "List Barang";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['barang'] = $this->Barang_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('check_out/vw_barang', $data);

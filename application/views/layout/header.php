@@ -87,6 +87,9 @@
         <p class="text-muted nav-heading mt-4 mb-1">
           <span>Santapan Harian</span>
         </p>
+        <?php 
+            if($user['status']=='admin'){
+                ?>
         <ul class="navbar-nav flex-fill w-100 mb-2">
           <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-box fe-16"></i>
@@ -108,6 +111,10 @@
             <i class="fe fe-share fe-16"></i>
             <span class="ml-3 item-text">Rec-Out</span>
           </a>
+          <?php
+          }else{
+            ?>
+         
           <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
             <i class="fe fe-download fe-16"></i>
             <span class="ml-3 item-text">Check In</span>
@@ -116,6 +123,9 @@
             <i class="fe fe-share fe-16"></i>
             <span class="ml-3 item-text">Check Out</span>
           </a>
+          <?php
+           }
+           ?>
           <!-- <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-pie-chart fe-16"></i>
             <span class="ml-3 item-text">Charts</span>

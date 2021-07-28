@@ -10,7 +10,7 @@ class Check_in extends CI_Controller
     function index()
     {
         $data['judul'] = "Halaman Penambahan Barang";
-
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
         $this->form_validation->set_rules('jenis_barang', 'Jenis Barang', 'required', ['required' => 'Jenis Barang Wajib diisi',]);
@@ -19,7 +19,7 @@ class Check_in extends CI_Controller
         if($this->form_validation->run() == false){
         $this->load->view("layout/header", $data);
         $this->load->view("check_in/form_barang", $data);
-        $this->load->view("layout/footer");
+        $this->load->view("layout/footer", $data);
 
     }else{
         $data = [

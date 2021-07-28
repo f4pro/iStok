@@ -10,14 +10,16 @@ class Barang extends CI_Controller
     function index()
     {
         $data['judul'] = "Halaman Barang";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['barang'] = $this->Barang_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("barang/vw_barang", $data);
-        $this->load->view("layout/footer");
+        $this->load->view("layout/footer", $data);
     }
     function tambah(){
         $data['judul'] = "Halaman Tambah Barang";
-       
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
         $this->form_validation->set_rules('jenis_barang', 'Jenis Barang', 'required', ['required' => 'Jenis Barang Wajib diisi',]);
         $this->form_validation->set_rules('stok', 'Stok', 'required|numeric', ['required' => 'Stok Wajib diisi',
@@ -61,6 +63,7 @@ class Barang extends CI_Controller
     function edit($id){
         $data['judul'] = "Halaman Edit Mahasiswa";
         $data['barang'] = $this->Barang_model->getById($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
         $this->form_validation->set_rules('jenis_barang', 'Jenis Barang', 'required', ['required' => 'Jenis Barang Wajib diisi',]);
