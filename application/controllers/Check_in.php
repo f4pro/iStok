@@ -12,7 +12,7 @@ class Check_in extends CI_Controller
         $data['judul'] = "Halaman Penambahan Barang";
         $data['check_in'] = $this->Barang_model->get();
         $this->load->view("layout/header", $data);
-        $this->load->view("check/form_barang", $data);
+        $this->load->view("check_in/form_barang", $data);
         $this->load->view("layout/footer");
     }
 }
