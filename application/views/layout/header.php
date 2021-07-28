@@ -88,7 +88,7 @@
           <span>Santapan Harian</span>
         </p>
         <?php 
-            if($user['status']=='admin'){
+            if($user['status']=='Admin'){
                 ?>
         <ul class="navbar-nav flex-fill w-100 mb-2">
           <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">

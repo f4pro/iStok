@@ -83,7 +83,7 @@ class Auth extends CI_Controller
                     'id' => $user['id'],
                 ];
                 $this->session->set_userdata($data);
-                if ($user['status'] == 'admin') {
+                if ($user['status'] == 'Admin') {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
                     redirect('Barang');
                 } else {
