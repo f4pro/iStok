@@ -122,7 +122,7 @@
           </a> -->
         </ul>
         <div class="btn-box w-100 mt-4 mb-1">
-          <a href="<?php echo site_url('barang/'); ?>" target="_blank" class="btn mb-2 btn-danger btn-lg btn-block">
+          <a href="<?php echo site_url('auth/logout'); ?>" target="_blank" class="btn mb-2 btn-danger btn-lg btn-block">
             <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
           </a>
         </div>

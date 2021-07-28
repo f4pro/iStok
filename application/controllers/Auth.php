@@ -13,11 +13,11 @@ class Auth extends CI_Controller
             redirect('Barang');
         }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', [
-            'valid_email' => 'Email Harus Valid',
-            'required' => 'Email Wajib di isi'
+            'valid_email' => 'Email is not valid',
+            'required' => 'Email must be filled in'
         ]);
         $this->form_validation->set_rules('password', 'Password', 'trim|required', [
-            'required' => 'Password Wajib di isi'
+            'required' => 'Password must be filled in'
         ]);
         if ($this->form_validation->run() == false) {
             $this->load->view("layout/auth_header.php");
@@ -35,18 +35,18 @@ class Auth extends CI_Controller
         }
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'Email ini sudah terdaftar!',
-            'valid_email' => 'Email Harus Valid',
-            'required' => 'Email Wajib di isi'
+            'is_unique' => 'This email has been registered!',
+            'valid_email' => 'Email is not valid',
+            'required' => 'Email must be filled in'
         ]);
         $this->form_validation->set_rules(
             'password1',
             'Password',
             'required|trim|min_length[5]|matches[password2]',
             [
-                'matches' => 'Password Tidak Sama',
-                'min_length' => 'Password Terlalu Pendek',
-                'required' => 'Password harus diisi'
+                'matches' => 'Password matched',
+                'min_length' => 'Password to short',
+                'required' => 'Password must be filled in'
             ]
         );
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
@@ -65,7 +65,7 @@ class Auth extends CI_Controller
                 'date_created' => time()
             ];
             $this->userrole->insert($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akunmu telah berhasil terdaftar, Silahkan Login! </div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Account created!</div>');
             redirect('auth');
         }
     }
