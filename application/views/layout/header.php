@@ -55,7 +55,7 @@
             <span class="avatar avatar-sm mt-2">
               <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
             </span>
-            <?= $user['nama']; ?>
+            <b><?= $user['nama']; ?></b>
           </a>
         </li>
       </ul>
