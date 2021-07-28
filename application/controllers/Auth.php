@@ -88,7 +88,7 @@ class Auth extends CI_Controller
                     redirect('Barang');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
-                    redirect('Check_in');
+                    redirect('Profil/barang');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');

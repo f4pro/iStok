@@ -107,18 +107,22 @@
               <i class="fe fe-share fe-16"></i>
               <span class="ml-3 item-text">Rec-Out</span>
             </a>
-          <?php
+          <?php 
         } else {
           ?>
           </ul>
           <ul class="navbar-nav flex-fill w-100 mb-2">
+          <a href="<?php echo site_url('Profil/barang'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+              <i class="fe fe-box fe-16"></i>
+              <span class="ml-3 item-text">Barang</span>
+            </a>
             <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-download fe-16"></i>
-              <span class="ml-3 item-text">Check In</span>
+              <span class="ml-3 item-text">Barang Masuk</span>
             </a>
-            <a href="<?php echo site_url('Check_out/barang'); ?>" aria-expanded="false" class="nav-link">
+            <a href="<?php echo site_url('History/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-share fe-16"></i>
-              <span class="ml-3 item-text">Check Out</span>
+              <span class="ml-3 item-text">History</span>
             </a>
           <?php
         }
