@@ -12,20 +12,23 @@
                     </svg> -->
                     <img src="<?= base_url('assets/') ?>assets/images/istok.png" alt="iStok" />
                 </a>
-                <h1 class="h6 mb-3">SignIN</h1>
+                <h1 class="h6 mb-3">Sign In</h1>
                 <div class="form-group">
                     <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Email address" required="" autofocus="">
+                    <input type="email" id="inputEmail" value="<?= set_value('email') ?>" class="form-control form-control-lg" placeholder="Email address" required="" autofocus="">
+                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Password" required="">
+                    <input type="password" id="inputPassword" value="<?= set_value('password') ?>" class="form-control form-control-lg" placeholder="Password" required="">
+                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <!-- <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Stay logged in </label>
                 </div> -->
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Hit 'em up!</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login!</button>
+                <a class="btn btn-lg btn-light btn-block" type="submit" href="<?= base_url() ?>auth/registrasi">Don't have one?</a>
                 <p class="mt-5 mb-3 text-muted">© 2021, iStok</p>
             </form>
         </div>

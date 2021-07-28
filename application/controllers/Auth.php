@@ -10,7 +10,7 @@ class Auth extends CI_Controller
     function index()
     {
         if ($this->session->userdata('email')) {
-            redirect('Mahasiswa');
+            redirect('Barang');
         }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', [
             'valid_email' => 'Email Harus Valid',
@@ -31,7 +31,7 @@ class Auth extends CI_Controller
     function registrasi()
     {
         if ($this->session->userdata('email')) {
-            redirect('Mahasiswa');
+            redirect('Barang');
         }
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -60,7 +60,7 @@ class Auth extends CI_Controller
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'gambar' => 'default.jpg',
+                //'gambar' => 'default.jpg',
                 'role' => "User",
                 'date_created' => time()
             ];
@@ -84,18 +84,19 @@ class Auth extends CI_Controller
                 ];
                 $this->session->set_userdata($data);
                 if ($user['role'] == 'Admin') {
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat Datang!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
                     redirect('Mahasiswa');
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat Datang!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
                     redirect('Profil');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email belum terdaftar!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert"><span class="fe fe-alert-triangle fe-16 mr-2"/>New email, who is this? 
+            Try make it one :)</div>');
             redirect('auth');
         }
     }
@@ -104,7 +105,7 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil logout!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logged Out! Come again!</div>');
         redirect('auth');
     }
 }
