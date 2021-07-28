@@ -17,11 +17,13 @@
                 </div>
                 <div class="form-group">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" <?= set_value('email') ?> class="form-control" id="inputEmail4">
+                    <input type="text" name="email" <?= set_value('email') ?> class="form-control" id="inputEmail4">
+                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail4">Name</label>
-                    <input type="email" <?= set_value('nama') ?> class="form-control" id="inputEmail4">
+                    <input type="text" name="nama" <?= set_value('nama') ?> class="form-control" id="inputEmail4">
+                    <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <!-- <div class="form-row">
                     <div class="form-group col-md-6">
@@ -37,8 +39,9 @@
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="inputPassword5">New Password</label>
-                            <input type="password" name="password" class="form-control" id="inputPassword5">
+                            <label for="inputPassword5">Password</label>
+                            <input type="password" name="password1" class="form-control" id="inputPassword5">
+                            <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword6">Confirm Password</label>

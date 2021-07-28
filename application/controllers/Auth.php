@@ -61,8 +61,8 @@ class Auth extends CI_Controller
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 //'gambar' => 'default.jpg',
-                'role' => "User",
-                'date_created' => time()
+                'status' => "Karyawan",
+                //'date_created' => time()
             ];
             $this->userrole->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Account created!</div>');
@@ -79,16 +79,16 @@ class Auth extends CI_Controller
             if (password_verify($password, $user['password'])) {
                 $data = [
                     'email' => $user['email'],
-                    'role' => $user['role'],
+                    'status' => $user['status'],
                     'id' => $user['id'],
                 ];
                 $this->session->set_userdata($data);
-                if ($user['role'] == 'Admin') {
+                if ($user['status'] == 'Admin') {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
-                    redirect('Mahasiswa');
+                    redirect('Barang');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
-                    redirect('Profil');
+                    redirect('Barang');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
