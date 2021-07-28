@@ -21,6 +21,27 @@
   gtag('js', new Date());
   gtag('config', 'UA-56159088-1');
 </script>
+<script>
+  $(document).ready(function() {
+    $("#jumlah").on('keydown keyup change blur', function() {
+      var stokA = $("#stokA").val();
+      var jumlah = $("#jumlah").val();
+
+      var stokAk = parseInt(harga) * parseInt(jumlah);
+      $("#total").val(total);
+      if (parseInt($('input[name="stok"]').val()) <= parseInt(jumlah)) {
+        alert('stok tidak tersedia! stok tersedia :' + parseInt($('input[name="stok"]').val()))
+        reset()
+      }
+    });
+
+    function reset() {
+      $('input[name="jumlah"]').val('')
+      $('input[name="total"]').val('')
+
+    }
+  });
+</script>
 </body>
 
 </html>

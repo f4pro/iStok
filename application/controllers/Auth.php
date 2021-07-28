@@ -6,6 +6,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User_model', 'userrole');
+        $this->load->model('Karyawan_model');
     }
     function index()
     {
@@ -65,6 +66,11 @@ class Auth extends CI_Controller
                 //'date_created' => time()
             ];
             $this->userrole->insert($data);
+            $dataKar=[
+                'email' => $this->input->post('email'),
+                'nama_karyawan' => $this->input->post('nama'),
+            ];
+            $this->Karyawan_model->insert($dataKar);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Account created!</div>');
             redirect('Auth');
         }
@@ -82,13 +88,14 @@ class Auth extends CI_Controller
                     'status' => $user['status'],
                     'id' => $user['id'],
                 ];
+               
                 $this->session->set_userdata($data);
                 if ($user['status'] == 'Admin') {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
                     redirect('Barang');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Welcome!</div>');
-                    redirect('Profil/barang');
+                    redirect('HomeKar');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');

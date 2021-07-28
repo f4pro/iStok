@@ -16,21 +16,23 @@ class Barang extends CI_Controller
         $this->load->view("barang/vw_barang", $data);
         $this->load->view("layout/footer", $data);
     }
-    function tambah(){
+    function tambah()
+    {
         $data['judul'] = "Halaman Tambah Barang";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
         $this->form_validation->set_rules('jenis_barang', 'Jenis Barang', 'required', ['required' => 'Jenis Barang Wajib diisi',]);
-        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric', ['required' => 'Stok Wajib diisi',
-                                          'numeric' => 'Stok harus angka']);
+        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric', [
+            'required' => 'Stok Wajib diisi',
+            'numeric' => 'Stok harus angka'
+        ]);
 
-        if($this->form_validation->run() == false){
+        if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
             $this->load->view("barang/vw_tambah_barang", $data);
             $this->load->view("layout/footer", $data);
-
-        }else{
+        } else {
             $data = [
                 'nama_barang' => $this->input->post('nama_barang'),
                 'jenis_barang' => $this->input->post('jenis_barang'),
@@ -60,16 +62,18 @@ class Barang extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil Dihapus!</div>');
         redirect('Barang');
     }
-    function edit($id){
-        $data['judul'] = "Halaman Edit Mahasiswa";
+    function edit($id)
+    {
+        $data['judul'] = "Halaman Edit Barang";
         $data['barang'] = $this->Barang_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
         $this->form_validation->set_rules('jenis_barang', 'Jenis Barang', 'required', ['required' => 'Jenis Barang Wajib diisi',]);
-        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric', ['required' => 'Stok Wajib diisi',
-                                          'numeric' => 'Stok harus angka']);
-
+        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric', [
+            'required' => 'Stok Wajib diisi',
+            'numeric' => 'Stok harus angka'
+        ]);
         if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
             $this->load->view("barang/vw_edit_barang", $data);
@@ -87,7 +91,7 @@ class Barang extends CI_Controller
                 $config['upload_path'] = './assets/barang/';
                 $this->load->library('upload', $config);
 
-              if ($this->upload->do_upload('gambar')) {
+                if ($this->upload->do_upload('gambar')) {
 
                     $new_image = $this->upload->data('file_name');
                     $query = $this->db->set('gambar', $new_image);
@@ -96,7 +100,7 @@ class Barang extends CI_Controller
                         $old_image = $this->db->get_where('barang', ['id' => $id])->row();
                         unlink(FCPATH . 'assets/barang/' . $old_image->gambar);
                     }
-                    
+
                     $this->db->set('gambar', $new_image);
                 } else {
                     echo $this->upload->display_errors();

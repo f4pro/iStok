@@ -67,7 +67,7 @@
       <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="<?php echo site_url('dashboard/'); ?>">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="#">
             <!-- <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
               <g>
                 <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
@@ -112,7 +112,7 @@
           ?>
           </ul>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="<?php echo site_url('Profil/barang'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('HomeKar/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
               <i class="fe fe-box fe-16"></i>
               <span class="ml-3 item-text">Barang</span>
             </a>
