@@ -94,11 +94,7 @@
           <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-box fe-16"></i>
             <span class="ml-3 item-text">Barang</span>
-          </a>
-          <a href="<?php echo site_url('user/')?>" aria-expanded="false" class="nav-link">
-            <i class="fe fe-user fe-16"></i>
-            <span class="ml-3 item-text">User</span>
-          </a>
+            </a>
           <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
             <i class="fe fe-users fe-16"></i>
             <span class="ml-3 item-text">Karyawan</span>
