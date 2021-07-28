@@ -87,51 +87,52 @@
         <p class="text-muted nav-heading mt-4 mb-1">
           <span>Santapan Harian</span>
         </p>
-        <?php 
-            if($user['status']=='Admin'){
-                ?>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-box fe-16"></i>
-            <span class="ml-3 item-text">Barang</span>
+        <?php
+        if ($user['status'] == 'Admin') {
+        ?>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+              <i class="fe fe-box fe-16"></i>
+              <span class="ml-3 item-text">Barang</span>
             </a>
-          <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
-            <i class="fe fe-users fe-16"></i>
-            <span class="ml-3 item-text">Karyawan</span>
-          </a>
-          <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
-            <i class="fe fe-download fe-16"></i>
-            <span class="ml-3 item-text">Rec-In</span>
-          </a>
-          <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
-            <i class="fe fe-share fe-16"></i>
-            <span class="ml-3 item-text">Rec-Out</span>
-          </a>
+            <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
+              <i class="fe fe-users fe-16"></i>
+              <span class="ml-3 item-text">Karyawan</span>
+            </a>
+            <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-download fe-16"></i>
+              <span class="ml-3 item-text">Rec-In</span>
+            </a>
+            <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-share fe-16"></i>
+              <span class="ml-3 item-text">Rec-Out</span>
+            </a>
           <?php
-          }else{
-            ?>
-         
-          <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
-            <i class="fe fe-download fe-16"></i>
-            <span class="ml-3 item-text">Check In</span>
-          </a>
-          <a href="<?php echo site_url('Check_out/barang'); ?>" aria-expanded="false" class="nav-link">
-            <i class="fe fe-share fe-16"></i>
-            <span class="ml-3 item-text">Check Out</span>
-          </a>
+        } else {
+          ?>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-download fe-16"></i>
+              <span class="ml-3 item-text">Check In</span>
+            </a>
+            <a href="<?php echo site_url('Check_out/barang'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-share fe-16"></i>
+              <span class="ml-3 item-text">Check Out</span>
+            </a>
           <?php
-           }
-           ?>
+        }
+          ?>
           <!-- <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-pie-chart fe-16"></i>
             <span class="ml-3 item-text">Charts</span>
           </a> -->
-        </ul>
-        <div class="btn-box w-100 mt-4 mb-1">
-          <a href="<?php echo site_url('auth/logout'); ?>" target="_blank" class="btn mb-2 btn-danger btn-lg btn-block">
-            <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
-          </a>
-        </div>
+          </ul>
+          <div class="btn-box w-100 mt-4 mb-1">
+            <a href="<?php echo site_url('auth/logout'); ?>" class="btn mb-2 btn-danger btn-lg btn-block">
+              <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
+            </a>
+          </div>
       </nav>
     </aside>
     <main role="main" class="main-content">
