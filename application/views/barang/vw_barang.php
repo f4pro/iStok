@@ -6,14 +6,14 @@
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>barang/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Barang</a>
+          <a href="<?= base_url() ?>barang/tambah" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Barang</a>
         </div>
       </div>
       <div class="card shadow">
         <div class="card-body">
-
+        <div class="table-responsive">
           <h5 class="card-title"> Tabel Barang</h5>
-          <table class="table table-hover">
+          <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>No</th>

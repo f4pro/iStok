@@ -19,6 +19,8 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-light.css" id="lightTheme">
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-dark.css" id="darkTheme" disabled>
+  <!--Search Table -->
+  <link href="<?= base_url('assets/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body class="vertical  light  ">
