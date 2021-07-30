@@ -1,4 +1,5 @@
 <div class="container-fluid">
+<?= $this->session->flashdata('message'); ?>
    <div class="row justify-content-center">
      <div class="col-12">
       <div class="row align-items-center my-4">
@@ -10,13 +11,11 @@
         </div>
       </div>
       <div class="row my-4">
-                <!-- Small table -->
        <div class="col-md-12">
         <div class="card shadow">
             <div class="card-body">
-                   <!-- table -->
                    <h5 class="card-title"> Tabel Barang</h5>
-                   <table class="table datatables" id="dataTable-1">
+              <table class="table datatables" id="dataTable-1">
             <thead>
               <tr>
                 <th>No</th>

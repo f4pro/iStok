@@ -1,4 +1,5 @@
 <div class="card-body">
+<?= $this->session->flashdata('message'); ?>
   <div id="dataTable-1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
     <div class="col-sm-12">
       <div class="row align-items-center my-4">
