@@ -1,20 +1,21 @@
-<div class="card-body">
-<?= $this->session->flashdata('message'); ?>
-  <div id="dataTable-1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-    <div class="col-sm-12">
-      <div class="row align-items-center my-4">
+<div class="container-fluid">
+   <div class="row justify-content-center">
+     <div class="col-12">
+          <div class="row align-items-center my-4">
         <div class="col">
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>karyawan/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Karyawan</a>
+          <a href="<?= base_url() ?>karyawan/tambah" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Karyawan</a>
         </div>
       </div>
-      <div class="card shadow">
-        <div class="card-body">
-
-          <h5 class="card-title"> Tabel Karyawan</h5>
-          <table class="table table-hover">
+      <?= $this->session->flashdata('message'); ?>
+      <div class="row my-4">
+       <div class="col-md-12">
+        <div class="card shadow">
+            <div class="card-body">
+             <h5 class="card-title"> Tabel Karyawan</h5>
+              <table class="table datatables" id="dataTable-1">
             <thead>
               <tr>
                 <th>No</th>

@@ -21,6 +21,6 @@ class Record_out extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view("layout/header", $data);
         $this->load->view("record_out/vw_tambah_record_out", $data);
-        $this->load->view("layout/footer");
+        $this->load->view("layout/footer", $data);
     }
 }

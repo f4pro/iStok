@@ -1,8 +1,7 @@
 <div class="container-fluid">
-<?= $this->session->flashdata('message'); ?>
    <div class="row justify-content-center">
      <div class="col-12">
-      <div class="row align-items-center my-4">
+          <div class="row align-items-center my-4">
         <div class="col">
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
@@ -10,6 +9,7 @@
           <a href="<?= base_url() ?>barang/tambah" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Barang</a>
         </div>
       </div>
+      <?= $this->session->flashdata('message'); ?>
       <div class="row my-4">
        <div class="col-md-12">
         <div class="card shadow">
@@ -48,4 +48,3 @@
     </div>
   </div>
 </div>
-                
