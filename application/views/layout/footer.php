@@ -22,6 +22,15 @@
   gtag('config', 'UA-56159088-1');
 </script>
 <script>
+  $('#dataTable-1').DataTable({
+    autoWidth: true,
+    "lengthMenu": [
+      [16, 32, 64, -1],
+      [16, 32, 64, "All"]
+    ]
+  });
+</script>
+<script>
   $(document).ready(function() {
     $("#StokMasuk").on('keydown keyup change blur', function() {
       var stok = $("#stok").val();
