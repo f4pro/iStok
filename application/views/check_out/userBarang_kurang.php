@@ -26,18 +26,18 @@
                                         <div class="form-group">
                                             <label for="stok">Stok</label>
                                             <input name="stok" id="stok" value="<?= $barang['stok']; ?>" type="text" readonly class="form-control" id="pengarang">
-                                        </div>
+                                        </div> 
                                         <div class="form-group">
-                                            <label for="StokMasuk">Stok Masuk</label>
-                                            <input name="StokMasuk" type="number" class="form-control" id="StokMasuk">
-                                            <?= form_error('StokMasuk', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            <label for="StokKeluar">Stok Keluar</label>
+                                            <input name="StokKeluar" type="number" class="form-control" id="StokKeluar">
+                                            <?= form_error('StokKeluar', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
                                             <!-- <label for="total">#DEBUG# Hasil tambah</label> -->
                                             <input type="hidden" name="total" id="total" readonly class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" id="tambah" name="tambah" class="btn btn-primary float-right">Tambah Barang</button>
+                                            <button type="submit" id="tambah" name="tambah" class="btn btn-warning float-right">Ambil Barang</button>
                                             <a href="<?= base_url('HomeKar/'); ?>" class="btn btn-secondary">Kembali</a>
                                         </div>
                                     </div>
