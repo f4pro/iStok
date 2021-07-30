@@ -11,7 +11,7 @@ class Check_in extends CI_Controller
     }
     function index()
     {
-        $data['judul'] = "Halaman Penambahan Barang";
+        $data['judul'] = "Penambahan Barang Baru";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required|trim|is_unique[barang.nama_barang]', [

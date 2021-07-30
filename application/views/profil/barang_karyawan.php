@@ -26,7 +26,7 @@
                         </div>
                         <div class="align-items-center">
                             <a href="<?= base_url('HomeKar/BarangMasukKar/').$br['id']; ?>" class="btn mb-2 btn-primary">Barang Masuk</a>
-                            <a href="#" class="btn mb-2 btn-warning">Ambil Barang</a>
+                            <a href="<?= base_url('HomeKar/BarangKeluarKar/').$br['id']; ?>" class="btn mb-2 btn-warning">Ambil Barang</a>
                             <!--badge badge-warning badge-block | badge badge-info-->
                         </div>
                     </div>

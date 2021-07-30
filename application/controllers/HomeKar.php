@@ -9,6 +9,7 @@ class HomeKar extends CI_Controller
         $this->load->model('Barang_model');
         $this->load->model('User_model');
         $this->load->model('Record_in_model');
+        $this->load->model('Record_out_model');
     }
     public function index()
     {
@@ -53,17 +54,17 @@ class HomeKar extends CI_Controller
     }
     function BarangKeluarKar($id)
     {
-        $data['judul'] = "Barang Masuk";
+        $data['judul'] = "Barang Keluar";
         $data['barang'] = $this->Barang_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         
-        $this->form_validation->set_rules('StokMasuk', 'Stok Masuk', 'required|numeric', [
+        $this->form_validation->set_rules('StokKeluar', 'Stok Keluar', 'required|numeric', [
             'required' => 'Nominal masuk wajib diisi',
             'numeric' => 'Input harus angka!' ]);
 
         if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
-            $this->load->view("check_in/userBarang_tambah", $data);
+            $this->load->view("check_out/userBarang_kurang", $data);
             $this->load->view("layout/footer", $data);
         } else {
             $data = [
@@ -74,11 +75,11 @@ class HomeKar extends CI_Controller
             $data2 = [
                 'tanggal_keluar' => date('Y-m-d'),
                 'barang' => $id,
-                'stok' => $this->input->post('StokMasuk'),
+                'stok' => $this->input->post('StokKeluar'),
                 'pekerja' => $this->session->userdata('id')
             ];
             $this->Record_out_model->insert($data2);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Barang berhasil ditambah!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-info" role="alert">Barang berhasil dicatat! Mohon <b>periksa</b> barang sebelum Sign Out </div>');
             redirect('HomeKar/');
         }
     }

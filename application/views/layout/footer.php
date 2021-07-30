@@ -50,8 +50,19 @@
     $("#StokMasuk").on('keydown keyup change blur', function() {
       var stok = $("#stok").val();
       var StokMasuk = $("#StokMasuk").val();
-
+      
       var total = parseInt(stok) + parseInt(StokMasuk);
+      $("#total").val(total);
+    });
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $("#StokKeluar").on('keydown keyup change blur', function() {
+      var stok = $("#stok").val();
+      var StokKeluar = $("#StokKeluar").val();
+      
+      var total = parseInt(stok) - parseInt(StokKeluar);
       $("#total").val(total);
     });
   });
