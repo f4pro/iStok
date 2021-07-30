@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12">
       <h1 class="page-title"><?php echo $judul; ?></h1>
-      <p class="text-muted"></p>
+      <p class="text-muted">Mohon tambahkan barang yang belum ada pada <b>List Barang</b>!</p>
       <div class="row">
         <div class="col-md-12">
           <div class="card shadow mb-4">

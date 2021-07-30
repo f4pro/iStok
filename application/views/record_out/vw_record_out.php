@@ -6,37 +6,40 @@
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>karyawan/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record Out</a>
+          <a href="<?= base_url() ?>record_out/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record Out</a>
         </div>
       </div>
       <div class="card shadow">
         <div class="card-body">
 
-          <h5 class="card-title"> Tabel Barang</h5>
+          <h5 class="card-title">Barang-Out</h5>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Nama Barang</th>
-                <th>Jenis Barang</th>
-                <th>Stok Barang</th>
-                <th>Gambar</th>
+                <th>Tanggal Keluar</th>
+                <th>Barang</th>
+                <th>Stok</th>
+                <th>Pekerja</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($record_out as $ro) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr>
+              <td><?= $i; ?></td>
+                <td><?= $ro['tanggal_keluar'] ?></td>
+                <td><?= $ro['barang'] ?></td>
+                <td><?= $ro['stok'] ?></td>
+                <td><?= $ro['pekerja'] ?></td>
                 <td>
                   <a href=" " class="badge badge-pill badge-warning">Hapus</a>
                   <a href=" " class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>

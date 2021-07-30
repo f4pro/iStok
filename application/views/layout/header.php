@@ -7,18 +7,21 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+  <title><?php echo $judul; ?> - iStok</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/simplebar.css">
   <!-- Fonts CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <!-- Icons CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/feather.css">
+  <link rel="stylesheet" href="<?= base_url('assets/') ?>css/dataTables.bootstrap4.css">
   <!-- Date Range Picker CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/daterangepicker.css">
   <!-- App CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-light.css" id="lightTheme">
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/app-dark.css" id="darkTheme" disabled>
+  <!--Search Table -->
+  <link href="<?= base_url('assets/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body class="vertical  light  ">
@@ -55,7 +58,7 @@
             <span class="avatar avatar-sm mt-2">
               <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
             </span>
-            Username
+            <b><?= $user['nama']; ?></b>
           </a>
         </li>
       </ul>
@@ -67,7 +70,7 @@
       <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="<?php echo site_url('dashboard/'); ?>">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="#">
             <!-- <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
               <g>
                 <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
@@ -75,49 +78,68 @@
                 <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
               </g>
             </svg> -->
-            <img src="<?= base_url('assets/') ?>/assets/images/logo.svg" alt="iStok" />
+            <img src="<?= base_url('assets/') ?>/assets/images/istok.png" alt="iStok" />
           </a>
         </div>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
+        <!-- <ul class="navbar-nav flex-fill w-100 mb-2">
           <a href="<?php echo site_url('dashboard/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-home fe-16"></i>
             <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
           </a>
-        </ul>
+        </ul> -->
         <p class="text-muted nav-heading mt-4 mb-1">
           <span>Santapan Harian</span>
         </p>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-box fe-16"></i>
-            <span class="ml-3 item-text">Barang</span>
-          </a>
-          <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-user fe-16"></i>
-            <span class="ml-3 item-text">User</span>
-          </a>
-          <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
-            <i class="fe fe-users fe-16"></i>
-            <span class="ml-3 item-text">Karyawan</span>
-          </a>
-          <a href="<?php echo site_url('record_in/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-download fe-16"></i>
-            <span class="ml-3 item-text">Rec-In</span>
-          </a>
-          <a href="<?php echo site_url('record_out/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
-            <i class="fe fe-share fe-16"></i>
-            <span class="ml-3 item-text">Rec-Out</span>
-          </a>
-          <!-- <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+        <?php
+        if ($user['status'] == 'Admin') {
+        ?>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+              <i class="fe fe-box fe-16"></i>
+              <span class="ml-3 item-text">Barang</span>
+            </a>
+            <a href="<?php echo site_url('karyawan/'); ?>" class="nav-link" href="widgets.html">
+              <i class="fe fe-users fe-16"></i>
+              <span class="ml-3 item-text">Karyawan</span>
+            </a>
+            <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-download fe-16"></i>
+              <span class="ml-3 item-text">Rec-In</span>
+            </a>
+            <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-share fe-16"></i>
+              <span class="ml-3 item-text">Rec-Out</span>
+            </a>
+          <?php 
+        } else {
+          ?>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+          <a href="<?php echo site_url('HomeKar/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+              <i class="fe fe-box fe-16"></i>
+              <span class="ml-3 item-text">Barang</span>
+            </a>
+            <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-download fe-16"></i>
+              <span class="ml-3 item-text">Barang Masuk</span>
+            </a>
+            <a href="<?php echo site_url('History/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-share fe-16"></i>
+              <span class="ml-3 item-text">History</span>
+            </a>
+          <?php
+        }
+          ?>
+          <!-- <a href="#" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="fe fe-pie-chart fe-16"></i>
             <span class="ml-3 item-text">Charts</span>
           </a> -->
-        </ul>
-        <div class="btn-box w-100 mt-4 mb-1">
-          <a href="<?php echo site_url('barang/'); ?>" target="_blank" class="btn mb-2 btn-danger btn-lg btn-block">
-            <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
-          </a>
-        </div>
+          </ul>
+          <div class="btn-box w-100 mt-4 mb-1">
+            <a href="<?php echo site_url('auth/logout'); ?>" class="btn mb-2 btn-danger btn-lg btn-block">
+              <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Sign Out</span>
+            </a>
+          </div>
       </nav>
     </aside>
     <main role="main" class="main-content">

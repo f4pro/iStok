@@ -6,37 +6,39 @@
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>record_in/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record In</a>
+          <!-- <a href="<?= base_url() ?>record_in/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record In</a> -->
         </div>
       </div>
       <div class="card shadow">
         <div class="card-body">
 
-          <h5 class="card-title"> Tabel Barang</h5>
+          <h5 class="card-title">Barang-In</h5>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Nama Barang</th>
-                <th>Jenis Barang</th>
-                <th>Stok Barang</th>
-                <th>Gambar</th>
+                <th>Tanggal Masuk</th>
+                <th>Barang</th>
+                <th>Stok</th>
+                <th>Pemeriksa</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-
+            <?php $i = 1; ?>
+                  <?php foreach ($record_in as $ri) : ?>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $i; ?></td>
+                <td><?= $ri['tanggal_masuk'] ?></td>
+                <td><?= $ri['nama_barang'] ?></td>
+                <td><?= $ri['stok'] ?></td>
+                <td><?= $ri['pemeriksa'] ?></td>
                 <td>
-                  <a href=" " class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('Record_in/hapus/') . $ri['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
+                  <a href="<?= base_url('Record_in/edit/') . $ri['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
               </tr>
-
+              <?php $i++; ?>
+                  <?php endforeach; ?>
             </tbody>
           </table>
         </div>
