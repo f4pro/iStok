@@ -10,6 +10,9 @@
 <script src="<?= base_url('assets/'); ?>js/tinycolor-min.js"></script>
 <script src="<?= base_url('assets/'); ?>js/config.js"></script>
 <script src="<?= base_url('assets/'); ?>js/apps.js"></script>
+<script src="<?= base_url('assets/'); ?>js/jquery.dataTable.min.js"></script>
+<script src="<?= base_url('assets/'); ?>js/dataTables.bootstrap4.min.js"></script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
 
