@@ -7,6 +7,8 @@ class HomeKar extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Barang_model');
+        $this->load->model('User_model');
+        $this->load->model('Record_in_model');
     }
     public function index()
     {
@@ -18,31 +20,30 @@ class HomeKar extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
-    function BarangMasuk($id){
-        $data['keranjang'] = $this->Keranjang_model->get();
-        $data['judul'] = "Detail Buku";
-        $data['user'] = $this->User_model->getBy();
-        $data['buku'] = $this->Buku_model->getById($id);
-        $data['jlh'] = $this->Keranjang_model->jumlah();
-        $this->form_validation->set_rules('jumlah', 'Jumlah', 'required', [
-            'required' => 'Jumlah Wajib di isi '
-        ]);
-        if ( $this->form_validation->run() == false) {
-            $this->load->view('layout/header', $data);
-            $this->load->view('profil/vw_keranjang', $data);
-            $this->load->view('layout/footer', $data);
+    function BarangMasukKar($id){
+        $data['judul'] = "Barang Masuk";
+        $data['barang'] = $this->Barang_model->getById($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view("layout/header", $data);
+            $this->load->view("check_in/userBarang_tambah", $data);
+            $this->load->view("layout/footer", $data);
         } else {
             $data = [
-                'id_user' => $this->session->userdata('id'),
-                'id_buku' => $this->input->post('id'),
-                'jumlah' => $this->input->post('jumlah'),
-                'total' => $this->input->post('total'),
-                'tanggal' => $this->input->post('tanggal'),
+                'stok' => $this->input->post('StokHitungM')
             ];
-            $this->Keranjang_model->insert($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Buku
-             berhasil ditambah ke keranjang !!!</div>');
-            redirect('Profil/detail');
+            $data2 = [
+                'tanggal_masuk' => date('Y-m-d'),
+                'nama_barang' => $this->Barang_model->getById($id),
+                'stok' => $this->input->post('StokHitungM'),
+                'pemeriksa' => $this->session->userdata('id')
+            ];
+            $id = $this->input->post('id');
+            $this->Barang_model->update(['id' => $id], $data);
+            $this->Record_in_model->insert($data2);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil DiUbah!</div>');
+            redirect('Barang');
         }
     }
 }
