@@ -14,7 +14,7 @@
        <div class="col-md-12">
         <div class="card shadow">
             <div class="card-body">
-                   <h5 class="card-title"> Tabel Barang</h5>
+             <h5 class="card-title"> Tabel Barang</h5>
               <table class="table datatables" id="dataTable-1">
             <thead>
               <tr>
