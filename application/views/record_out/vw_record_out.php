@@ -23,7 +23,7 @@
                 <th>Barang</th>
                 <th>Stok</th>
                 <th>Pekerja</th>
-                <th>Aksi</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -36,8 +36,9 @@
                 <td><?= $ro['stok'] ?></td>
                 <td><?= $ro['pekerja'] ?></td>
                 <td>
-                  <a href=" " class="badge badge-pill badge-warning">Hapus</a>
-                  <a href=" " class="badge badge-pill badge-danger">Edit</a>
+                  <!-- <a href=" " class="badge badge-pill badge-warning">Hapus</a>
+                  <a href=" " class="badge badge-pill badge-danger">Edit</a> -->
+                </td>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>
