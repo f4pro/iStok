@@ -33,12 +33,10 @@
                   <?php foreach ($barang as $br) : ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <?php if ($br['stok'] < 10) { ?>
+                      <?php if ($br['stok'] <= 10) { ?>
                         <td><button class="btn btn-badge badge-danger">Stok Kurang</button></td>
                       <?php } elseif ($br['stok'] < 20) { ?>
                         <td><button class="btn btn-badge badge-warning">Segera Restok</button></td>
-                      <?php } elseif ($br['stok'] <= 1) { ?>
-                        <td><button class="btn btn-badge badge-warning">Stok Habis</button></td>
                       <?php } else { ?>
                         <td> </td>
                       <?php } ?>
