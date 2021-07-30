@@ -94,7 +94,7 @@
         if ($user['status'] == 'Admin') {
         ?>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-            <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <a href="<?php echo site_url('barang/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-box fe-16"></i>
               <span class="ml-3 item-text">Barang</span>
             </a>
@@ -115,7 +115,7 @@
           ?>
           </ul>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="<?php echo site_url('HomeKar/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('HomeKar/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-box fe-16"></i>
               <span class="ml-3 item-text">Barang</span>
             </a>
