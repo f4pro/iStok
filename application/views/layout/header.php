@@ -121,10 +121,10 @@
             </a>
             <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-download fe-16"></i>
-              <span class="ml-3 item-text">Barang Masuk</span>
+              <span class="ml-3 item-text">Barang Baru</span>
             </a>
             <a href="<?php echo site_url('History/'); ?>" aria-expanded="false" class="nav-link">
-              <i class="fe fe-share fe-16"></i>
+              <i class="fe fe-watch fe-16"></i>
               <span class="ml-3 item-text">History</span>
             </a>
           <?php

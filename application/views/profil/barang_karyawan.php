@@ -14,7 +14,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    <?= $br['nama_barang']; ?></div>
+                                    <b><?= $br['nama_barang']; ?></b></div>
                                 <div class="tetxt-xs font-weight-bold text-gray-800">Jenis Barang: <?= $br['jenis_barang'] ?></div>
 
                                 <div>Stok</div>

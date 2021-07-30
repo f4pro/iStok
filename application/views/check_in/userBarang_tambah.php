@@ -30,6 +30,7 @@
                                         <div class="form-group">
                                             <label for="StokMasuk">Stok Masuk</label>
                                             <input name="StokMasuk" type="number" class="form-control" id="StokMasuk">
+                                            <?= form_error('StokMasuk', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="total">#DEBUG# Hasil tambah</label>
