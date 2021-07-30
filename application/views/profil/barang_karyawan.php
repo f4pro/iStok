@@ -18,15 +18,15 @@
                                 <div class="tetxt-xs font-weight-bold text-gray-800">Jenis Barang: <?= $br['jenis_barang'] ?></div>
 
                                 <div>Stok</div>
-                                <div><a class="btn mb-2 btn-outline-primary active"><?= $br['stok'] ?></a></div>
+                                <div><a class="btn mb-2 btn-outline-info active"><?= $br['stok'] ?></a></div>
                             </div>
                             <div class="col-auto">
                                 <img src="<?= base_url('assets/barang/') . $br['gambar']; ?>" style="width:100px" class="img-thumbnail">
                             </div>
                         </div>
                         <div class="align-items-center">
-                            <a href="<?= base_url('HomeKar/BarangMasuk') ?>" class="btn mb-2 btn-primary">Barang Masuk</a>
-                            <a href="<?= base_url('#') ?>" class="btn mb-2 btn-outline-warning">Ambil Barang</a>
+                            <a href="<?= base_url('HomeKar/BarangMasukKar/').$br['id']; ?>" class="btn mb-2 btn-primary">Barang Masuk</a>
+                            <a href="#" class="btn mb-2 btn-warning">Ambil Barang</a>
                             <!--badge badge-warning badge-block | badge badge-info-->
                         </div>
                     </div>
