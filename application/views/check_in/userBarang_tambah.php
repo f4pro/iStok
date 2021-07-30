@@ -25,15 +25,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="stok">Stok</label>
-                                            <input name="stok" value="<?= $barang['stok']; ?>" type="text" readonly class="form-control" id="pengarang">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="total">#DEBUG# Hasil tambah</label>
-                                            <input type="text" name="StokHitungM" id="StokHitungM" readonly class="form-control">
+                                            <input name="stok" id="stok" value="<?= $barang['stok']; ?>" type="text" readonly class="form-control" id="pengarang">
                                         </div>
                                         <div class="form-group">
                                             <label for="StokMasuk">Stok Masuk</label>
                                             <input name="StokMasuk" type="number" class="form-control" id="StokMasuk">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="total">#DEBUG# Hasil tambah</label>
+                                            <input type="text" name="total" id="total" readonly class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" id="tambah" name="tambah" class="btn btn-primary float-right">Tambah Barang</button>
