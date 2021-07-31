@@ -41,7 +41,15 @@
       
       var total = parseInt(stok) - parseInt(StokKeluar);
       $("#total").val(total);
+      if (parseInt($('input[name="stok"]').val())<parseInt(StokKeluar)){
+        alert('Tidak bisa melebihi stok yang tersedia!')
+        reset()
+      }
     });
+    function reset() {
+      $('input[name="StokKeluar"]').val('')
+      $('input[name="total"]').val('')
+    }
   });
 </script>
 </body>
