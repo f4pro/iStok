@@ -18,7 +18,7 @@ function is_logged_in2(){
         redirect('auth');
     }else{
         $role = $ci->session->userdata('status');
-        if ($role != "Karayawan"){
+        if ($role != "Karyawan"){
             redirect('HomeKar');
         }
     }
