@@ -54,12 +54,27 @@
           <input class="nav-link mr-sm-2 bg-transparent border-0 text-muted my-2" type="search" placeholder="Keep moving forward!" aria-label="Search" disabled>
         </li> -->
         <li class="nav-item dropdown">
+        <?php
+        if ($user['status'] == 'Karyawan') {
+        ?>
           <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
               <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
             </span>
             <b><?= $user['nama']; ?></b>
           </a>
+          <?php 
+        } else {
+          ?>
+           <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar avatar-sm mt-2">
+              <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
+            </span>
+            <b>ADMIN</b>
+          </a>
+          <?php
+        }
+          ?>
         </li>
       </ul>
     </nav>
