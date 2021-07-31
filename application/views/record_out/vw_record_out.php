@@ -16,6 +16,9 @@
             <div class="card-body">
              <h5 class="card-title"> Tabel Record Out</h5>
               <table class="table datatables" id="dataTable-1">
+              <div class="float-right">
+                <a href="<?= base_url('Record_out/export') ?>" class="btn btn-secondary btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
+                </div>
             <thead>
               <tr>
                 <th>No</th>

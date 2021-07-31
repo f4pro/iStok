@@ -5,17 +5,19 @@
         <div class="col">
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
-        <div class="col-auto">
-          <!-- <a href="<?= base_url() ?>record_in/tambah" type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>Record In</a> -->
-        </div>
+        
       </div>
       <?= $this->session->flashdata('message'); ?>
       <div class="row my-4">
        <div class="col-md-12">
         <div class="card shadow">
             <div class="card-body">
+              
              <h5 class="card-title"> Tabel Record In</h5>
               <table class="table datatables" id="dataTable-1">
+              <div class="float-right">
+                <a href="<?= base_url('Record_in/export') ?>" class="btn btn-secondary btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
+                </div>
             <thead>
               <tr>
                 <th>No</th>
