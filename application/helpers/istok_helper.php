@@ -12,8 +12,9 @@ function is_logged_in(){
     }
 }
 function is_logged_in2(){
+    
     $ci = get_instance();
-    if (!$ci->session->userdata('status')){
+    if (!$ci->session->userdata('email')){
         redirect('auth');
     }else{
         $role = $ci->session->userdata('status');
