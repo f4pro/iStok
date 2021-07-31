@@ -16,7 +16,7 @@
                 <h1 class="h6 mb-3">Sign In</h1>
                 <div class="form-group">
                     <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="text" name="email" value="<?= set_value('email') ?>" class="form-control form-control-lg" placeholder="Email address" required="" autofocus="">
+                    <input type="text" name="email" value="<?= set_value('email') ?>" class="form-control form-control-lg" placeholder="Email" required="" autofocus="">
                     <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
@@ -29,7 +29,7 @@
                         <input type="checkbox" value="remember-me"> Stay logged in </label>
                 </div> -->
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Login!</button>
-                <a class="btn btn-lg btn-light btn-block" type="submit" href="<?= base_url() ?>Auth/registrasi">Don't have one?</a>
+                <a class="btn btn-lg btn-light btn-block" type="submit" href="<?= base_url() ?>Auth/registrasi">Tidak punya akun?</a>
                 <p class="mt-5 mb-3 text-muted">© 2021, iStok</p>
             </form>
         </div>
