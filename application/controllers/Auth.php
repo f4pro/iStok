@@ -34,9 +34,9 @@ class Auth extends CI_Controller
         if ($this->session->userdata('email')) {
             redirect('Barang');
         }
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim',['required' => 'Nama harus diisi']);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'This email has been registered!',
+            'is_unique' => 'Email sudah diregistrasi!',
             'valid_email' => 'Email is not valid',
             'required' => 'Email harus diisi'
         ]);
@@ -45,7 +45,7 @@ class Auth extends CI_Controller
             'Password',
             'required|trim|min_length[5]|matches[password2]',
             [
-                'matches' => 'Password matched',
+                'matches' => 'Password cocok',
                 'min_length' => 'Password terlalu pendek',
                 'required' => 'Password harus diisi'
             ]
@@ -68,14 +68,15 @@ class Auth extends CI_Controller
                 'status' => "Proses",
             ];
             $this->userrole->insert($data);
-            // $dataKar = [
-            //     'email' => htmlspecialchars($this->input->post('email', true)),
-            //     'nama_karyawan' => htmlspecialchars($this->input->post('nama_karyawan', true)),
-            //     'alamat' => $this->input->post('alamat'),
-            //     'notelp' => $this->input->post('notelp'),
-            //     'NIK' => $this->input->post('NIK')
-            // ];
-            // $this->Karyawan_model->insert($dataKar);
+            $dataKar = [
+                'email' => $this->input->post('email'),
+                'nama_karyawan' => $this->input->post('nama'),
+                'alamat' => $this->input->post('alamat'),
+                'notelp' => $this->input->post('notelp'),
+                'NIK' => $this->input->post('NIK'),
+                'usia' => $this->input->post('usia'),
+            ];
+            $this->Karyawan_model->insert($dataKar);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Account created!</div>');
             redirect('Auth');
         }

@@ -59,7 +59,7 @@
         ?>
           <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
-              <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
+            <img src="<?= base_url('assets/') ?>karyawan/default.jpg" class="avatar-img rounded-circle">
             </span>
             <b><?= $user['nama']; ?></b>
           </a>
@@ -68,7 +68,7 @@
           ?>
            <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
-              <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
+              <img src="<?= base_url('assets/') ?>karyawan/default.jpg" class="avatar-img rounded-circle">
             </span>
             <b>ADMIN</b>
           </a>
@@ -117,13 +117,21 @@
               <i class="fe fe-users fe-16"></i>
               <span class="ml-3 item-text">Karyawan</span>
             </a>
+            <a href="<?php echo site_url('Account/'); ?>" class="nav-link" href="widgets.html">
+              <i class="fe fe-key fe-16"></i>
+              <span class="ml-3 item-text">Account</span>
+            </a>
             <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-download fe-16"></i>
-              <span class="ml-3 item-text">Rec-In</span>
+              <span class="ml-3 item-text">Record In</span>
             </a>
             <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-share fe-16"></i>
-              <span class="ml-3 item-text">Rec-Out</span>
+              <span class="ml-3 item-text">Record Out</span>
+            </a>
+            <a href="<?php echo site_url('support/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-flag fe-16"></i>
+              <span class="ml-3 item-text">Laporan</span>
             </a>
           <?php 
         } else {
@@ -141,6 +149,10 @@
             <a href="<?php echo site_url('History/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-watch fe-16"></i>
               <span class="ml-3 item-text">History</span>
+            </a>
+            <a href="<?php echo site_url('support/tambah'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-flag fe-16"></i>
+              <span class="ml-3 item-text">Laporan</span>
             </a>
           <?php
         }

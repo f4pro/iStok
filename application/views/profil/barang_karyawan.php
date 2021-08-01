@@ -22,8 +22,7 @@
                                 <div>
                                     <?php if ($br['stok'] > 21) { ?>
                                         <a class="btn mb-2 btn-outline-info active"><?= $br['stok'] ?></a>
-                                    <?php }
-                                    elseif ($br['stok'] >= 5 && $br['stok'] <= 20) { ?>
+                                    <?php } elseif ($br['stok'] >= 5 && $br['stok'] <= 20) { ?>
                                         <a class="btn mb-2 btn-outline-warning active"><?= $br['stok'] ?></a>
                                     <?php } else { ?>
                                         <a class="btn mb-2 btn-outline-danger active">Not Available</a>

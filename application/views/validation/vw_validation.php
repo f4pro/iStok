@@ -25,13 +25,12 @@
     <div class="wrapper vh-100">
         <div class="align-items-center h-100 d-flex w-50 mx-auto">
             <div class="mx-auto text-center">
-                <h1 class="display-1 m-0 font-weight-bolder text-muted" style="font-size:80px;">No, you can't!</h1>
-                <h1 class="mb-1 text-muted font-weight-bold">Your account currently under validation</h1>
-                <h6 class="mb-3 text-muted">Contact administrator on ext. 132 or adm@istok.com.</h6>
-                <button href="#" class="btn btn-lg btn-danger px-5">
-                    <span class="fe fe-chevron-left mr-2"></span>
-                    Back
-                </button>
+                <h1 class="display-1 m-0 font-weight-bolder text-muted" style="font-size:80px;">Yaaah~!</h1>
+                <h1 class="mb-1 text-muted font-weight-bold">Akun anda dalam tahap validasi</h1>
+                <h6 class="mb-3 text-muted">Hubungi administrator di ext. 132 atau adm@istok.com</h6>
+                <a href="<?= base_url('auth/logout') ?>" class="btn btn-lg btn-danger px-5">
+                    Log Out
+                </a>
             </div>
         </div>
     </div>
