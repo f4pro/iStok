@@ -22,6 +22,13 @@ class User_model extends CI_Model
             $query = $this->db->get();
             return $query->row_array();
         }
+        public function getById($id)
+        {
+            $this->db->from($this->table);
+            $this->db->where('id', $id);
+            $query = $this->db->get();
+            return $query->row_array();
+        }
         public function insert($data)
         {
             $this->db->insert($this->table, $data);
