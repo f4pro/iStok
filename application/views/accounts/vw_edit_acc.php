@@ -11,29 +11,29 @@
             </div>
             <div class="card-body">
               <form action="" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                <input type="hidden" name="id" value="<?= $akun['id']; ?>">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="nama">Nama User</label>
-                    <input type="text" name='nama' value="<?= $user['nama']; ?>" class="form-control" id="nama_barang" disabled>
+                    <input type="text" name='nama' value="<?= $akun['nama']; ?>" class="form-control" id="nama_barang" disabled>
                     <!-- <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="text" name='email' value="<?= $user['email']; ?>" class="form-control" id="email">
+                    <input type="text" name='email' value="<?= $akun['email']; ?>" class="form-control" id="email">
                     <!-- <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
                     <label for="password">Password</label>
-                    <input type="password" name='password' value="<?= $user['password']; ?>" class="form-control" id="password" disabled>
+                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password" disabled>
                     <!-- <?= form_error('jenis_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
                     <label for="status">Status</label>
                     <select type="text" name="status" class="form-control" id="status">
-                      <?php if ($user['status'] == "Admin") { ?>
+                      <?php if ($akun['status'] == "Admin") { ?>
                         <option selected>Admin [Current]</option>
-                      <?php } elseif ($user['status'] == "Karyawan") { ?>
+                      <?php } elseif ($akun['status'] == "Karyawan") { ?>
                         <option selected>Karyawan [Current]</option>
                       <?php } else { ?>
                         <option selected>Proses [Current]</option>

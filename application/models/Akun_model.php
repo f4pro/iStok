@@ -1,11 +1,11 @@
 <?php 
 defined('BASEPATH') or exit('No direct script access allowed');
-class User_model extends CI_Model
+class Akun_model extends CI_Model
 {
     public $table = 'user';
     public $id = 'user.id';
 
-        public function __construct()
+    public function __construct()
         {
             parent::__construct();
         }
@@ -29,33 +29,9 @@ class User_model extends CI_Model
             $query = $this->db->get();
             return $query->row_array();
         }
-        public function insert($data)
-        {
-            $this->db->insert($this->table, $data);
-            return $this->db->insert_id();
-        }
         public function update($data)
         {
             $this->db->update($this->table, $data);
             return $this->db->affected_rows();
         }
-        public function delete($id)
-        {
-            $this->db->where($this->id, $id);
-            $this->db->delete($this->table);
-            return $this->db->affected_rows();
-        }
-        public function tuser(){
-            $this->db->from($this->table);
-            $query = $this->db->get();
-            return $query->num_rows();
-        }
-        public function updatestatus($status, $noUser)
-    {
-        $this->db->set('status', $status);
-        $this->db->where('id', $noUser);
-        $this->db->update($this->table);
-        return $this->db->affected_rows();
-    }
 }
-?>

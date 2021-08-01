@@ -29,7 +29,7 @@
                 <tbody>
                   <?php $i = 1; ?>
 
-                  <?php foreach ($user as $us) : ?>
+                  <?php foreach ($akun as $us) : ?>
                     <tr>
                       <td><?= $i; ?></td>
                       <td><?= $us['nama'] ?></td>
