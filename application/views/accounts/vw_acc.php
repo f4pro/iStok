@@ -43,7 +43,7 @@
                         <td><button class="btn btn-badge badge-danger">Validasi</button></td>
                       <?php } ?>
                       <td>
-                        <a href="<?= base_url('account/detail/') . $us['id']; ?>" class="badge badge-pill badge-info">Detail</a>
+                        <a href="<?= base_url('account/edit/') . $us['id']; ?>" class="badge badge-pill badge-info">Detail</a>
                     </tr>
                     <?php $i++; ?>
                   <?php endforeach; ?>
