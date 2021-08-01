@@ -65,7 +65,7 @@ class Auth extends CI_Controller
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'status' => "Proses",
+                'status' => "Karyawan",
             ];
             $this->userrole->insert($data);
             $dataKar = [
