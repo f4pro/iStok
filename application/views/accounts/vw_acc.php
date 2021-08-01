@@ -22,7 +22,7 @@
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>Status</th>
+                    <th>Role</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
