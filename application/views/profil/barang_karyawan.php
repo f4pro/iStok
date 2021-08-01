@@ -2,6 +2,36 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
     <div class="row">
+        <!-- <div class="card border-center-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="col-md-4">
+                            <img src="<?= base_url('assets/karyawan/') . $user['gambar']; ?>" style="width:100px" class="img-thumbnail">
+                        </div>
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <b>aaa</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="http://localhost/istok/assets/karyawan/default.jpg" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $user['nama']?></h5>
+                        <p class="card-text"><?= $user['email']?></p>
+                        <p class="card-text"><small class="text-muted">Anggota Sejak </small></p>
+                        <p class="card-text"><small class="text-muted">31 July 2021</small></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12">
             <?= $this->session->flashdata('message');
             ?>

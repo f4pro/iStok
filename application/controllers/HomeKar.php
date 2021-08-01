@@ -17,8 +17,9 @@ class HomeKar extends CI_Controller
         $data['judul'] = "List Barang";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['barang'] = $this->Barang_model->get();
+        $dataU['nama'] = $this->User_model->get();
         $this->load->view('layout/header', $data);
-        $this->load->view('profil/barang_karyawan', $data);
+        $this->load->view('profil/barang_karyawan', $data, $dataU);
         $this->load->view('layout/footer', $data);
     }
 
@@ -27,10 +28,11 @@ class HomeKar extends CI_Controller
         $data['judul'] = "Barang Masuk";
         $data['barang'] = $this->Barang_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        
+
         $this->form_validation->set_rules('StokMasuk', 'Stok Masuk', 'required|numeric', [
             'required' => 'Nominal masuk wajib diisi',
-            'numeric' => 'Input harus angka!' ]);
+            'numeric' => 'Input harus angka!'
+        ]);
 
         if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
@@ -58,10 +60,11 @@ class HomeKar extends CI_Controller
         $data['judul'] = "Barang Keluar";
         $data['barang'] = $this->Barang_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        
+
         $this->form_validation->set_rules('StokKeluar', 'Stok Keluar', 'required|numeric', [
             'required' => 'Nominal masuk wajib diisi',
-            'numeric' => 'Input harus angka!' ]);
+            'numeric' => 'Input harus angka!'
+        ]);
 
         if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
