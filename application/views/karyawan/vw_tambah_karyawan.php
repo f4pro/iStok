@@ -39,7 +39,7 @@
                     <?= form_error('usia', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress2">Gambar</label>
+                  <label for="Gambar">Gambar</label>
                   <div class="custom-file">
                     <input type="file" name="gambar" class="form-control" id="gambar">
                     <label for="gambar" class="custom-file-label">Choose File</label>

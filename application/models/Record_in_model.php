@@ -17,15 +17,6 @@ class Record_in_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-    public function getById($id)
-    {
-        $this->db->select('barang.* , prodi.nama as prodi');
-        $this->db->from('mahasiswa');
-        $this->db->join('prodi','mahasiswa.prodi = prodi.id');
-        $this->db->where('mahasiswa.id', $id);
-        $query = $this->db->get();
-        return $query->row_array();
-    }
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);
@@ -41,6 +32,16 @@ class Record_in_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
         return $this->db->affected_rows();
+    }
+    public function getByUser()
+    {
+        $id = $this->session->userdata('id');
+        $this->db->select('r.*,b.nama_barang as nama_barang');
+        $this->db->from('record_in r');
+        $this->db->where('pemeriksa', $id);
+        $this->db->join('barang b','r.nama_barang = b.id');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }
 ?>

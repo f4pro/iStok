@@ -14,19 +14,19 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Nama Barang</label>
-                    <input type="text" name='nama_barang' value="<?= set_value('nama_barang');?>"  class="form-control" id="nama_barang" placeholder="Nama Barang...">
+                    <input type="text" name='nama_barang' value="<?= set_value('nama_barang'); ?>" class="form-control" id="nama_barang" placeholder="Nama Barang...">
                     <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Jenis Barang</label>
-                    <input type="text" name='jenis_barang' value="<?= set_value('jenis_barang');?>"  class="form-control" id="jenis_barang" placeholder="Jenis Barang...">
+                    <input type="text" name='jenis_barang' value="<?= set_value('jenis_barang'); ?>" class="form-control" id="jenis_barang" placeholder="Jenis Barang...">
                     <?= form_error('jenis_barang', '<small class="text-danger pl-3">', '</small>'); ?>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Stok</label>
-                  <input type="text" name='stok' value="<?= set_value('stok');?>"  class="form-control" id="stok" placeholder="Stok Barang...">
-                    <?= form_error('stok', '<small class="text-danger pl-3">', '</small>'); ?>
+                  <input type="text" name='stok' value="<?= set_value('stok'); ?>" class="form-control" id="stok" placeholder="Stok Barang...">
+                  <?= form_error('stok', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Gambar</label>
@@ -35,8 +35,14 @@
                     <label for="gambar" class="custom-file-label">Choose File</label>
                   </div>
                 </div>
-                <a href="<? base_url('Barang') ?>" class="btn btn-danger">Kembali</a>
-                <button type="submit" name="Tambah" class="btn btn-primary">Tambah</button>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <a href="<?= base_url('Barang') ?>" class="btn btn-danger form-control " >Kembali</a>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <button type="submit" name="Tambah" class="btn btn-primary form-control">Tambah</button>
+                  </div>
+                </div>
               </form>
             </div> <!-- /. card-body -->
           </div> <!-- /. card -->

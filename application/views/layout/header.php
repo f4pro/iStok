@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <!-- Icons CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/feather.css">
-  <link rel="stylesheet" href="<?= base_url('assets/') ?>css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href='<?= base_url('assets/') ?>css/dataTables.bootstrap4.css'>
   <!-- Date Range Picker CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/daterangepicker.css">
   <!-- App CSS -->
@@ -54,12 +54,27 @@
           <input class="nav-link mr-sm-2 bg-transparent border-0 text-muted my-2" type="search" placeholder="Keep moving forward!" aria-label="Search" disabled>
         </li> -->
         <li class="nav-item dropdown">
+        <?php
+        if ($user['status'] == 'Karyawan') {
+        ?>
           <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="avatar avatar-sm mt-2">
-              <img src="<?= base_url('assets/') ?>assets/avatars/face-1.jpg" class="avatar-img rounded-circle">
+            <img src="<?= base_url('assets/') ?>karyawan/default.jpg" class="avatar-img rounded-circle">
             </span>
             <b><?= $user['nama']; ?></b>
           </a>
+          <?php 
+        } else {
+          ?>
+           <a class="nav-link text-muted pr-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar avatar-sm mt-2">
+              <img src="<?= base_url('assets/') ?>karyawan/default.jpg" class="avatar-img rounded-circle">
+            </span>
+            <b>ADMIN</b>
+          </a>
+          <?php
+        }
+          ?>
         </li>
       </ul>
     </nav>
@@ -94,7 +109,7 @@
         if ($user['status'] == 'Admin') {
         ?>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-            <a href="<?php echo site_url('barang/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <a href="<?php echo site_url('barang/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-box fe-16"></i>
               <span class="ml-3 item-text">Barang</span>
             </a>
@@ -102,30 +117,42 @@
               <i class="fe fe-users fe-16"></i>
               <span class="ml-3 item-text">Karyawan</span>
             </a>
+            <a href="<?php echo site_url('Account/'); ?>" class="nav-link" href="widgets.html">
+              <i class="fe fe-key fe-16"></i>
+              <span class="ml-3 item-text">Account</span>
+            </a>
             <a href="<?php echo site_url('record_in/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-download fe-16"></i>
-              <span class="ml-3 item-text">Rec-In</span>
+              <span class="ml-3 item-text">Record In</span>
             </a>
             <a href="<?php echo site_url('record_out/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-share fe-16"></i>
-              <span class="ml-3 item-text">Rec-Out</span>
+              <span class="ml-3 item-text">Record Out</span>
+            </a>
+            <a href="<?php echo site_url('support/'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-flag fe-16"></i>
+              <span class="ml-3 item-text">Laporan</span>
             </a>
           <?php 
         } else {
           ?>
           </ul>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-          <a href="<?php echo site_url('HomeKar/'); ?>" data-toggle="collapse" aria-expanded="false" class="nav-link">
+          <a href="<?php echo site_url('HomeKar/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-box fe-16"></i>
               <span class="ml-3 item-text">Barang</span>
             </a>
             <a href="<?php echo site_url('Check_in/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-download fe-16"></i>
-              <span class="ml-3 item-text">Barang Masuk</span>
+              <span class="ml-3 item-text">Barang Baru</span>
             </a>
             <a href="<?php echo site_url('History/'); ?>" aria-expanded="false" class="nav-link">
-              <i class="fe fe-share fe-16"></i>
+              <i class="fe fe-watch fe-16"></i>
               <span class="ml-3 item-text">History</span>
+            </a>
+            <a href="<?php echo site_url('support/tambah'); ?>" aria-expanded="false" class="nav-link">
+              <i class="fe fe-flag fe-16"></i>
+              <span class="ml-3 item-text">Laporan</span>
             </a>
           <?php
         }

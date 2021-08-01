@@ -1,21 +1,28 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Record_out_model extends CI_Model
+class Support_model extends CI_Model
 {
-    public $table = 'record_out';
-    public $id = 'record_out.id';
+    public $table = 'support';
+    public $id = 'support.id';
+
     public function __construct()
     {
         parent::__construct();
     }
     public function get()
     {
-        $this->db->select('r.*,b.nama_barang as barang, k.nama_karyawan as pekerja');
-        $this->db->from('record_out r');
-        $this->db->join('barang b','r.barang = b.id');
-        $this->db->join('karyawan k','r.pekerja = k.id');
+        $this->db->select('s.*,u.nama as karyawan');
+        $this->db->from('support s');
+        $this->db->join('user u', 's.karyawan = u.id');
         $query = $this->db->get();
         return $query->result_array();
+    }
+    public function getById($id)
+    {
+        $this->db->from($this->table);
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        return $query->row_array();
     }
     public function update($where, $data)
     {
@@ -35,13 +42,11 @@ class Record_out_model extends CI_Model
     }
     public function getByUser()
     {
-        $id = $this->session->userdata('id');
-        $this->db->select('r.*,b.nama_barang as barang');
-        $this->db->from('record_out r');
-        $this->db->where('pekerja', $id);
-        $this->db->join('barang b','r.barang = b.id');
+        $this->db->select('s.*,u.nama as nama');
+        $this->db->from('support s');
+        //$this->db->where('karyawan', $id);
+        $this->db->join('user u', 's.nama = u.id');
         $query = $this->db->get();
         return $query->result_array();
     }
 }
-?>

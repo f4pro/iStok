@@ -2,6 +2,36 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
     <div class="row">
+        <!-- <div class="card border-center-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="col-md-4">
+                            <img src="<?= base_url('assets/karyawan/') . $user['gambar']; ?>" style="width:100px" class="img-thumbnail">
+                        </div>
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <b>aaa</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="http://localhost/istok/assets/karyawan/default.jpg" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $user['nama']?></h5>
+                        <p class="card-text"><?= $user['email']?></p>
+                        <p class="card-text"><small class="text-muted">Anggota Sejak </small></p>
+                        <p class="card-text"><small class="text-muted">31 July 2021</small></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12">
             <?= $this->session->flashdata('message');
             ?>
@@ -14,19 +44,35 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    <?= $br['nama_barang']; ?></div>
+                                    <b><?= $br['nama_barang']; ?></b>
+                                </div>
                                 <div class="tetxt-xs font-weight-bold text-gray-800">Jenis Barang: <?= $br['jenis_barang'] ?></div>
 
                                 <div>Stok</div>
-                                <div><a class="btn mb-2 btn-outline-info active"><?= $br['stok'] ?></a></div>
+                                <div>
+                                    <?php if ($br['stok'] > 21) { ?>
+                                        <a class="btn mb-2 btn-outline-info active"><?= $br['stok'] ?></a>
+                                    <?php } elseif ($br['stok'] >= 5 && $br['stok'] <= 20) { ?>
+                                        <a class="btn mb-2 btn-outline-warning active"><?= $br['stok'] ?></a>
+                                    <?php } else { ?>
+                                        <a class="btn mb-2 btn-outline-danger active">Not Available</a>
+                                    <?php } ?>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <img src="<?= base_url('assets/barang/') . $br['gambar']; ?>" style="width:100px" class="img-thumbnail">
                             </div>
                         </div>
                         <div class="align-items-center">
-                            <a href="<?= base_url('HomeKar/BarangMasukKar/').$br['id']; ?>" class="btn mb-2 btn-primary">Barang Masuk</a>
-                            <a href="#" class="btn mb-2 btn-warning">Ambil Barang</a>
+                            <a href="<?= base_url('HomeKar/BarangMasukKar/') . $br['id']; ?>" class="btn mb-2 btn-primary">Barang Masuk</a>
+                            <?php if ($br['stok'] > 3) { ?>
+                                <a href="<?= base_url('HomeKar/BarangKeluarKar/') . $br['id']; ?>" class="btn mb-2 btn-warning">Ambil Barang</a>
+                            <?php } else { ?>
+                                <button type="button" class="btn mb-2 btn-outline-secondary" disabled>Ambil Barang</button>
+                            <?php } ?>
+                            <!-- <button type="button" class="btn mb-2 btn-danger" data-toggle="modal" data-target="#verticalModal">
+                                <span class="fe fe-x"></span>
+                            </button> -->
                             <!--badge badge-warning badge-block | badge badge-info-->
                         </div>
                     </div>

@@ -5,13 +5,14 @@ class Check_in extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Barang_model');
         $this->load->model('Record_in_model');
         $this->load->model('Karyawan_model');
     }
     function index()
     {
-        $data['judul'] = "Halaman Penambahan Barang";
+        $data['judul'] = "Penambahan Barang Baru";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required|trim|is_unique[barang.nama_barang]', [
