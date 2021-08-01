@@ -25,7 +25,7 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label for="email">Status</label>
-                    <select type="text" name="status" class="form-control" id="status">
+                    <select type="text" name="status_support" class="form-control" id="status">
                       <?php if ($support['status_support'] == "Pending") { ?>
                         <option selected>Pending [Current]</option>
                       <?php } elseif ($support['status_support'] == "Accepted") { ?>
