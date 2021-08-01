@@ -50,6 +50,29 @@ class Support extends CI_Controller
             redirect('Support');
         }
     }
+    function tambah()
+    {
+        $data['judul'] = "Form Laporan";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        //$data['karyawan']= $this->Karyawan_model->get();
+        //$data['support'] = $this->Support_model->getById($id);
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view("layout/header", $data);
+            $this->load->view("lapor/vw_tambah_support", $data);
+            $this->load->view("layout/footer", $data);
+        } else {
+            $data = [
+                'rate' => $this->input->post('rate'),
+                'karyawan' => $this->session->userdata('id'),
+                'jenis_support' => $this->input->post('jenis_support'),
+                'description' => $this->input->post('description')
+            ];
+            $this->Support_model->tambah($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Support berhasil diupdate</div>');
+            redirect('Support');
+        }
+    }
     function hapus($id)
     {
         $this->Barang_model->delete($id);
