@@ -15,7 +15,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="nama">Nama User</label>
-                    <input type="text" name='nama' value="<?= $user['nama']; ?>" class="form-control" id="nama_barang" disabled>
+                    <input type="text" name='nama' value="<?= $user['nama']; ?>" class="form-control" id="nama" disabled>
                     <!-- <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
