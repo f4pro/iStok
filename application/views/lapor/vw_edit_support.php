@@ -70,7 +70,7 @@
                     <a href="<?= base_url('Support/') ?>" class="btn btn-secondary form-control">Kembali</a>
                   </div>
                   <div class="form-group col-md-6">
-                    <button type="submit" name="Edit" class="btn btn-primary form-control">Konfimasi Perubahan</button>
+                    <button type="submit" name="Tambah" class="btn btn-primary form-control">Konfimasi Perubahan</button>
                   </div>
                 </div>
               </form>

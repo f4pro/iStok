@@ -49,4 +49,19 @@ class Support_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function geById2($id){
+        $this->db->select('s.*,u.nama as karyawan');
+        $this->db->from('support s');
+        $this->db->join('user u', 's.nama = u.id');
+        $this->db->where('s.id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function updatestatus($status, $noSup)
+    {
+        $this->db->set('status_support', $status);
+        $this->db->where('id', $noSup);
+        $this->db->update($this->table);
+        return $this->db->affected_rows();
+    }
 }
