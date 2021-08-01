@@ -39,8 +39,15 @@
                     </select>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="email">Nama Karyawan</label>
-                    <input type="text" name='karyawan' <?= $support['karyawan']; ?> value="<?= $support['karyawan']; ?>" class="form-control" id="karyawan" readonly>
+                    <label for="karyawan">Nama Karyawan</label>
+                    <select name="karyawan" id="karyawan" class="form-control">
+                                <?php foreach ($karyawan as $p) : ?>
+                                    <option value="<?= $p['id']; ?>" <?php if ($support['karyawan'] == $p['id']) {
+                                                                            echo "selected";
+                                                                        } ?>> <?= $p['nama_karyawan']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+
                   </div>
                 </div>
                 <div class="form-group">

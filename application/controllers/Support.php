@@ -8,6 +8,8 @@ class Support extends CI_Controller
         is_logged_in();
         $this->load->model('Support_model');
         $this->load->model('User_model');
+        $this->load->model('Karyawan_model');
+
     }
     function index()
     {
@@ -22,6 +24,7 @@ class Support extends CI_Controller
     {
         $data['judul'] = "Detail Laporan";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['karyawan']= $this->Karyawan_model->get();
         $data['support'] = $this->Support_model->getById($id);
         //$data2['user'] = $this->User_model->getByUser();
         // $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required', ['required' => 'Nama Barang Wajib diisi',]);
