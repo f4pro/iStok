@@ -5,9 +5,9 @@
         <div class="col">
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
-        <div class="col-auto">
+        <!-- <div class="col-auto">
           <a href="<?= base_url() ?>karyawan/tambah" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Karyawan</a>
-        </div>
+        </div> -->
       </div>
       <?= $this->session->flashdata('message'); ?>
       <div class="row my-4">
@@ -40,8 +40,8 @@
                 <td><?= $kr['usia'] ?></td>
                 <td><?= $kr['NIK'] ?></td>
                 <td>
-                  <a href="<?= base_url('karyawan/hapus/') . $kr['id']; ?>" class="badge badge-pill badge-warning">Hapus</a>
-                  <a href="<?= base_url('karyawan/edit/') . $kr['id']; ?>" class="badge badge-pill badge-danger">Edit</a>
+                  <a href="<?= base_url('karyawan/hapus/') . $kr['id']; ?>" class="badge badge-pill badge-danger">Hapus</a>
+                  <a href="<?= base_url('karyawan/edit/') . $kr['id']; ?>" class="badge badge-pill badge-warning">Edit</a>
               </tr>
               <?php $i++; ?>
                   <?php endforeach; ?>
