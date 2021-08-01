@@ -40,12 +40,11 @@ class Support extends CI_Controller
             $this->load->view("layout/footer", $data);
         } else {
             $data = [
-                'nama_barang' => $this->input->post('nama_barang'),
-                'jenis_barang' => $this->input->post('jenis_barang'),
-                'stok' => $this->input->post('stok'),
+                'status_support' => $this->input->post('status_support'),
+                'description_feed' => $this->input->post('description_feed')
             ];
-            
-            $this->Barang_model->insert($data);
+            $id = $this->input->post('id');
+            $this->Support_model->update(['id' => $id], $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil Ditambah!</div>');
             redirect('Support');
         }
