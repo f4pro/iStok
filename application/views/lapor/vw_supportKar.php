@@ -6,7 +6,7 @@
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
         <div class="col-auto">
-          <a href="<?= base_url() ?>SupportKar/tambah" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Barang</a>
+          <a href="<?= base_url() ?>SupportKar/tambahSupportKar" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Lapor</a>
         </div>
       </div>
       <?= $this->session->flashdata('message'); ?>
@@ -14,13 +14,13 @@
         <div class="col-md-12">
           <div class="card shadow">
             <div class="card-body">
-              <h5 class="card-title"> Laporan</h5>
+              <h5 class="card-title"></h5>
               <table class="table datatables" id="dataTable-1">
                 <thead>
                   <tr>
                     <th>No</th>
                     <th>Rate</th>
-                    <th>Nama Karyawan</th>
+                    <!-- <th>Nama Karyawan</th> -->
                     <th>Jenis Lapor</th>
                     <th>Status</th>
                     <th>Aksi</th>
@@ -38,7 +38,8 @@
                         <td><button class="btn btn-badge badge-warning">Medium</button></td>
                       <?php } else { ?>
                         <td><button class="btn btn-badge badge-danger">Urgent</button></td>
-                      <?php } ?> <td><?= $sp['karyawan'] ?></td>
+                      <?php } ?>
+                      <!-- <td><?= $sp['karyawan'] ?></td> -->
                       <td><?= $sp['jenis_support'] ?></td>
                       <?php if ($sp['status_support'] == "Pending") { ?>
                         <td><button class="btn btn-badge badge-secondary">Pending</button></td>

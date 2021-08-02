@@ -24,18 +24,18 @@
                     <?php } ?>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="status_support">Status</label>
+                    <label for="email">Status</label>
                     <select name="status_support" class="form-control" id="status_support">
                       <?php if ($support['status_support'] == "Pending") { ?>
-                        <option selected>Pending [Current]</option>
+                        <option selected value="Pending">Pending [Current]</option>
                       <?php } elseif ($support['status_support'] == "Accepted") { ?>
-                        <option selected>Accepted [Current]</option>
+                        <option selected value="Pending">Accepted [Current]</option>
                       <?php } else { ?>
-                        <option selected>Solved [Current]</option>
+                        <option selected value="Pending">Solved [Current]</option>
                       <?php } ?>
-                          <option value="Pending">Pending</option>
-                          <option value="Accepted">Accepted</option>
-                          <option value="Solved">Solved</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Accepted">Accepted</option>
+                      <option value="Solved">Solved</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
@@ -55,12 +55,12 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Descripsi</label>
-                  <textarea class="form-control" id="description" rows="4" disabled><?= $support['description']?></textarea>
+                  <textarea class="form-control" id="example-textarea" rows="4" disabled><?= $support['description'] ?></textarea>
                 </div>
                 <hr class="my-4">
                 <div class="form-group">
                   <label for="email">Reply</label>
-                  <textarea class="form-control" name="description_feed" id="description_feed" rows="4"><?= $support['description_feed']?></textarea>
+                  <textarea class="form-control" name="description_feed" id="example-textarea" rows="4"><?= $support['description_feed'] ?></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <a href="<?= base_url('Account/') ?>" class="btn btn-secondary">Kembali</a>
@@ -70,7 +70,7 @@
                     <a href="<?= base_url('Support/') ?>" class="btn btn-secondary form-control">Kembali</a>
                   </div>
                   <div class="form-group col-md-6">
-                    <button type="submit" name="Tambah" class="btn btn-primary form-control">Konfimasi Perubahan</button>
+                    <button type="submit" name="Edit" class="btn btn-primary form-control">Konfimasi Perubahan</button>
                   </div>
                 </div>
               </form>

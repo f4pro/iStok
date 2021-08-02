@@ -10,7 +10,7 @@
               <strong class="card-title">Form</strong>
             </div>
             <div class="card-body">
-              <form action="" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('SupportKar/upload') ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="nama">Rate</label>
                   <select class="form-control" name="rate">

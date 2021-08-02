@@ -10,7 +10,7 @@
               <strong class="card-title">Form</strong>
             </div>
             <div class="card-body">
-              <form action="" method="POST" enctype="multipart/form-data">
+              <!-- <form action="<?= base_url('SupporKar/hapus') ?>" method="POST"> -->
                 <input type="hidden" name="id" value="<?= $support['id']; ?>">
                 <div class="form-row">
                   <div class="form-group col-md-4">
@@ -24,18 +24,14 @@
                     <?php } ?>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="email">Status</label>
-                    <select   name="status_support" class="form-control" id="status_support">
-                      <?php if ($support['status_support'] == "Pending") { ?>
-                        <option selected>Pending [Current]</option>
-                      <?php } elseif ($support['status_support'] == "Accepted") { ?>
-                        <option selected>Accepted [Current]</option>
-                      <?php } else { ?>
-                        <option selected>Solved [Current]</option>
-                      <?php } ?>
-                      <option value="Pending">Pending</option>
-                      <option value="Accepted">Accepted</option>
-                      <option value="Solved">Solved</option>
+                    <label for="status_support">Status</label>
+                    <?php if ($support['status_support'] == "Pending") { ?>
+                      <button class="btn btn-badge badge-secondary form-control">Pending</button>
+                    <?php } elseif ($support['status_support'] == "Accepted") { ?>
+                      <button class="btn btn-badge badge-warning form-control">Accepted</button>
+                    <?php } else { ?>
+                      <button class="btn btn-badge badge-success form-control">Solved</button>
+                    <?php } ?>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
@@ -55,25 +51,28 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Descripsi</label>
-                  <textarea class="form-control" id="example-textarea" rows="4" disabled><?= $support['description']?></textarea>
+                  <textarea class="form-control" id="description" rows="4" disabled><?= $support['description'] ?></textarea>
                 </div>
                 <hr class="my-4">
                 <div class="form-group">
-                  <label for="email">Reply</label>
-                  <textarea class="form-control" name="description_feed" id="example-textarea" rows="4"><?= $support['description_feed']?></textarea>
+                  <label for="email">Feedback</label>
+                  <textarea class="form-control" name="description_feed" id="description_feed" rows="4" disabled><?= $support['description_feed'] ?></textarea>
                 </div>
-                <!-- <div class="form-group">
-                  <a href="<?= base_url('Account/') ?>" class="btn btn-secondary">Kembali</a>
-                </div> -->
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <a href="<?= base_url('Support/') ?>" class="btn btn-secondary form-control">Kembali</a>
+                    <a href="<?= base_url('SupportKar/') ?>" class="btn btn-secondary form-control">Kembali</a>
                   </div>
-                  <div class="form-group col-md-6">
-                    <button type="submit" name="Edit" class="btn btn-primary form-control">Konfimasi Perubahan</button>
-                  </div>
+                  <?php if ($support['status_support'] == "Solved") { ?>
+                    <div class="form-group col-md-6">
+                      <a href="<?= base_url('SupportKar/hapus/'). $support['id'] ?>" name="delete" class="btn btn-info form-control">Selesai dan Hapus</a>
+                    </div>
+                  <?php } else { ?>
+                    <div class="form-group col-md-6">
+                      <button type="button" name="delete" class="btn btn-info form-control" disabled>Selesai dan Hapus</button>
+                    </div>
+                  <?php } ?>
                 </div>
-              </form>
+              <!-- </form> -->
             </div> <!-- /. card-body -->
           </div> <!-- /. card -->
         </div> <!-- /. col -->

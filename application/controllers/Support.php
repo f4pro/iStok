@@ -67,7 +67,7 @@ class Support extends CI_Controller
     }
     function hapus($id)
     {
-        $this->Barang_model->delete($id);
+        $this->Support_model->delete($id);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil Dihapus!</div>');
         redirect('Support');
     }

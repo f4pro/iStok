@@ -31,7 +31,7 @@ class Support_model extends CI_Model
     }
     public function insert($data)
     {
-        $this->db->insert($this->table, $data, $where);
+        $this->db->insert($this->table, $data);
         return $this->db->insert_id();
     }
     public function delete($id)
@@ -42,14 +42,15 @@ class Support_model extends CI_Model
     }
     public function getByUser()
     {
-        $this->db->select('s.*,u.nama as nama');
+        $id = $this->session->userdata('id');
+        $this->db->select('s.*');
         $this->db->from('support s');
-        //$this->db->where('karyawan', $id);
-        $this->db->join('user u', 's.nama = u.id');
+        $this->db->where('karyawan', $id);
+        //$this->db->join('user u', 's.nama = u.id');
         $query = $this->db->get();
         return $query->result_array();
     }
-    public function geById2($id){
+    public function getById2($id){
         $this->db->select('s.*,u.nama as karyawan');
         $this->db->from('support s');
         $this->db->join('user u', 's.nama = u.id');
