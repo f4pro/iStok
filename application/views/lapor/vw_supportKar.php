@@ -5,6 +5,9 @@
         <div class="col">
           <h1 class="page-title"><?php echo $judul; ?></h1>
         </div>
+        <div class="col-auto">
+          <a href="<?= base_url() ?>SupportKar/tambahSupportKar" type="button" class="btn btn-primary mb-4"><span class="fe fe-plus fe-16 mr-3"></span>&nbsp;&nbsp;Lapor</a>
+        </div>
       </div>
       <?= $this->session->flashdata('message'); ?>
       <div class="row my-4">
@@ -15,16 +18,17 @@
               <table class="table datatables" id="dataTable-1">
                 <thead>
                   <tr>
-                    <th><b>No</b></th>
-                    <th><b>Rate</b></th>
-                    <th><b>Nama Karyawan</b></th>
-                    <th><b>Jenis Lapor</b></th>
-                    <th><b>Status</b></th>
-                    <th><b>Aksi</b></th>
+                    <th>No</th>
+                    <th>Rate</th>
+                    <!-- <th>Nama Karyawan</th> -->
+                    <th>Jenis Lapor</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $i = 1; ?>
+
                   <?php foreach ($support as $sp) : ?>
                     <tr>
                       <td><?= $i; ?></td>
@@ -34,7 +38,8 @@
                         <td><button class="btn btn-badge badge-warning">Medium</button></td>
                       <?php } else { ?>
                         <td><button class="btn btn-badge badge-danger">Urgent</button></td>
-                      <?php } ?> <td><?= $sp['karyawan'] ?></td>
+                      <?php } ?>
+                      <!-- <td><?= $sp['karyawan'] ?></td> -->
                       <td><?= $sp['jenis_support'] ?></td>
                       <?php if ($sp['status_support'] == "Pending") { ?>
                         <td><button class="btn btn-badge badge-secondary">Pending</button></td>
@@ -44,7 +49,7 @@
                         <td><button class="btn btn-badge badge-success">Solved</button></td>
                       <?php } ?>
                       <td>
-                        <a href="<?= base_url('support/edit/') . $sp['id']; ?>" class="badge badge-pill badge-info">Detail</a>
+                        <a href="<?= base_url('supportKar/edit/') . $sp['id']; ?>" class="badge badge-pill badge-info">Detail</a>
                       </td>
                     </tr>
                     <?php $i++; ?>

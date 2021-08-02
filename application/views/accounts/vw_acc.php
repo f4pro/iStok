@@ -40,10 +40,11 @@
                       <?php } elseif ($us['status'] == "Admin") { ?>
                         <td><button class="btn btn-badge badge-warning">Administrator</button></td>
                       <?php } else { ?>
-                        <td><button class="btn btn-badge badge-danger">Validasi</button></td>
+                        <td><button class="btn btn-badge badge-danger">No Role</button></td>
                       <?php } ?>
                       <td>
                         <a href="<?= base_url('account/edit/') . $us['id']; ?>" class="badge badge-pill badge-info">Detail</a>
+                      </td>
                     </tr>
                     <?php $i++; ?>
                   <?php endforeach; ?>

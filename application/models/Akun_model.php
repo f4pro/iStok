@@ -29,9 +29,15 @@ class Akun_model extends CI_Model
             $query = $this->db->get();
             return $query->row_array();
         }
-        public function update($data)
+        public function update($where, $data)
         {
-            $this->db->update($this->table, $data);
+            $this->db->update($this->table, $data, $where);
+            return $this->db->affected_rows();
+        }
+        public function delete($id)
+        {
+            $this->db->where($this->id, $id);
+            $this->db->delete($this->table);
             return $this->db->affected_rows();
         }
 }
