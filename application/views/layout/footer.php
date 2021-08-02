@@ -21,8 +21,13 @@
         ]
       });
     </script>
-</script>
 <script>
+
+$('.custom-file-input').on('change', function(){
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass("selected").html(fileName);
+})
+
   $(document).ready(function() {
     $("#StokMasuk").on('keydown keyup change blur', function() {
       var stok = $("#stok").val();
