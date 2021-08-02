@@ -10,7 +10,7 @@
               <strong class="card-title"> </strong>
             </div>
             <div class="card-body">
-              <form action="" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('Account/upload') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $akun['id']; ?>">
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -46,7 +46,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <a href="<?= base_url('Account/') ?>" class="btn btn-secondary">Kembali</a>
-                    <button type="submit" name="edit" class="btn btn-warning">Konfimasi Perubahan</button>
+                    <button type="submit" name="Tambah" class="btn btn-warning">Konfimasi Perubahan</button>
                   </div>
               </form>
             </div> <!-- /. card-body -->

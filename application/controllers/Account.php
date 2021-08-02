@@ -24,19 +24,20 @@ class Account extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['akun'] = $this->Akun_model->getById($id);
 
-        if ($this->form_validation->run() == false) {
             $this->load->view("layout/header", $data);
             $this->load->view("accounts/vw_edit_acc", $data);
             $this->load->view("layout/footer", $data);
-        } else {
-            $data = [
-                'email' => $this->input->post('email'),
-                'status' => $this->input->post('status'),
-            ];
-            $id = $this->input->post('id');
-            $this->Akun_model->update(['id' => $id], $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil DiUbah!</div>');
-            redirect('Account');
-        }
+            
+    }
+    function upload(){
+        $data = [
+            'email' => $this->input->post('email'),
+            'status' => $this->input->post('status'),
+        ];
+        $id = $this->input->post('id');
+        $this->Akun_model->update(['id' => $id], $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil DiUbah!</div>');
+        redirect('Account');
+    
     }
 }

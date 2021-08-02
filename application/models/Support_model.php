@@ -31,7 +31,7 @@ class Support_model extends CI_Model
     }
     public function insert($data)
     {
-        $this->db->insert($this->table, $data);
+        $this->db->insert($this->table, $data, $where);
         return $this->db->insert_id();
     }
     public function delete($id)

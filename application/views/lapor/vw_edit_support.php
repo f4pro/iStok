@@ -10,7 +10,7 @@
               <strong class="card-title">Form</strong>
             </div>
             <div class="card-body">
-              <form action="" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('Support/upload') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $support['id']; ?>">
                 <div class="form-row">
                   <div class="form-group col-md-4">
@@ -24,8 +24,8 @@
                     <?php } ?>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="email">Status</label>
-                    <select type="text" name="status_support" class="form-control" id="status">
+                    <label for="status_support">Status</label>
+                    <select name="status_support" class="form-control" id="status_support">
                       <?php if ($support['status_support'] == "Pending") { ?>
                         <option selected>Pending [Current]</option>
                       <?php } elseif ($support['status_support'] == "Accepted") { ?>
@@ -33,9 +33,9 @@
                       <?php } else { ?>
                         <option selected>Solved [Current]</option>
                       <?php } ?>
-                      <option value="Pending">Pending</option>
-                      <option value="Accepted">Accepted</option>
-                      <option value="Solved">Solved</option>
+                          <option value="Pending">Pending</option>
+                          <option value="Accepted">Accepted</option>
+                          <option value="Solved">Solved</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
@@ -55,12 +55,12 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Descripsi</label>
-                  <textarea class="form-control" id="example-textarea" rows="4" disabled><?= $support['description']?></textarea>
+                  <textarea class="form-control" id="description" rows="4" disabled><?= $support['description']?></textarea>
                 </div>
                 <hr class="my-4">
                 <div class="form-group">
                   <label for="email">Reply</label>
-                  <textarea class="form-control" name="description_feed" id="example-textarea" rows="4"><?= $support['description_feed']?></textarea>
+                  <textarea class="form-control" name="description_feed" id="description_feed" rows="4"><?= $support['description_feed']?></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <a href="<?= base_url('Account/') ?>" class="btn btn-secondary">Kembali</a>
