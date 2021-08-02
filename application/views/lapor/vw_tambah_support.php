@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Judul Laporan</label>
-                  <input type="text" name='jenis_support' value="<?= set_value('jenis_support'); ?>" class="form-control" id="jenis_support" disabled>
+                  <input type="text" name='jenis_support' value="<?= set_value('jenis_support'); ?>" class="form-control" id="jenis_support">
                 </div>
                 <div class="form-group">
                   <label for="email">Descripsi</label>
@@ -33,7 +33,7 @@
                     <a href="<?= base_url('Support/') ?>" class="btn btn-secondary form-control">Kembali</a>
                   </div>
                   <div class="form-group col-md-6">
-                    <button type="submit" name="Edit" class="btn btn-primary form-control">Konfimasi Perubahan</button>
+                    <button type="submit" name="Edit" class="btn btn-primary form-control">Kirim</button>
                   </div>
                 </div>
               </form>

@@ -150,7 +150,7 @@
               <i class="fe fe-watch fe-16"></i>
               <span class="ml-3 item-text">History</span>
             </a>
-            <a href="<?php echo site_url('support/tambah'); ?>" aria-expanded="false" class="nav-link">
+            <a href="<?php echo site_url('SupportKar/'); ?>" aria-expanded="false" class="nav-link">
               <i class="fe fe-flag fe-16"></i>
               <span class="ml-3 item-text">Laporan</span>
             </a>
