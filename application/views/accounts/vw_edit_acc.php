@@ -15,7 +15,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="nama">Nama User</label>
-                    <input type="text" name='nama' value="<?= $user['nama']; ?>" class="form-control" id="nama" disabled>
+                    <input type="text" name='nama' value="<?= $akun['nama']; ?>" class="form-control" id="nama" disabled>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email">Email</label>
@@ -52,8 +52,8 @@
                 <input type="hidden" name="id" value="<?= $akun['id']; ?>">
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <label for="nama">Password [Rubah password untuk mereset]</label>
-                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password">
+                    <label for="nama">Reset Password</label>
+                    <input type="password" name='password' value="<?= set_value('password') ?>" class="form-control" id="password">
                   </div>
                   <div class="form-group col-md-12">
                     <button type="submit" name="Tambah" class="btn btn-danger col-md-12">Reset Password</button>
