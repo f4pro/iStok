@@ -16,17 +16,14 @@
                   <div class="form-group col-md-6">
                     <label for="nama">Nama User</label>
                     <input type="text" name='nama' value="<?= $user['nama']; ?>" class="form-control" id="nama" disabled>
-                    <!-- <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email">Email</label>
                     <input type="text" name='email' value="<?= $akun['email']; ?>" class="form-control" id="email">
-                    <!-- <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="password">Password</label>
-                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password" disabled>
-                    <!-- <?= form_error('jenis_barang', '<small class="text-danger pl-3">', '</small>'); ?> -->
+                    <label for="password">Password [Rubah password untuk mereset]</label>
+                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password" >
                   </div>
                   <div class="form-group col-md-6">
                     <label for="status">Status</label>
@@ -45,16 +42,17 @@
                     <!-- <?= form_error('stok', '<small class="text-danger pl-3">', '</small>'); ?> -->
                   </div>
                   <hr class="my-4">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <a href="<?= base_url('Account/') ?>" class="btn btn-secondary col-md-12">Kembali</a>
                   </div>
-                  <div class="form-group col-md-4">
-                    <a href="#"name="Tambah" class="btn btn-danger col-md-12">Reset Password</a>
-                  </div>
-                  <div class="form-group col-md-4">
+
+                  <div class="form-group col-md-6">
                     <button type="submit" name="Tambah" class="btn btn-warning col-md-12">Konfimasi Perubahan</button>
                   </div>
               </form>
+              <input type="hidden" name='password1' value="Passwordini123" class="form-control" id="password" disabled>
+
+
             </div> <!-- /. card-body -->
           </div> <!-- /. card -->
         </div> <!-- /. col -->

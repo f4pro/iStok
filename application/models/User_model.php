@@ -34,9 +34,9 @@ class User_model extends CI_Model
             $this->db->insert($this->table, $data);
             return $this->db->insert_id();
         }
-        public function update($data)
+        public function update($where, $data)
         {
-            $this->db->update($this->table, $data);
+            $this->db->update($this->table, $data, $where);
             return $this->db->affected_rows();
         }
         public function delete($id)
@@ -58,4 +58,3 @@ class User_model extends CI_Model
         return $this->db->affected_rows();
     }
 }
-?>
