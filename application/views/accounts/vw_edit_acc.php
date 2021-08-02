@@ -21,11 +21,7 @@
                     <label for="email">Email</label>
                     <input type="text" name='email' value="<?= $akun['email']; ?>" class="form-control" id="email">
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="password">Password [Rubah password untuk mereset]</label>
-                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password" >
-                  </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-12">
                     <label for="status">Status</label>
                     <select type="text" name="status" class="form-control" id="status">
                       <?php if ($akun['status'] == "Admin") { ?>
@@ -50,10 +46,20 @@
                     <button type="submit" name="Tambah" class="btn btn-warning col-md-12">Konfimasi Perubahan</button>
                   </div>
               </form>
-              <input type="hidden" name='password1' value="Passwordini123" class="form-control" id="password" disabled>
-
-
             </div> <!-- /. card-body -->
+            <div class="card-body">
+              <form action="<?= base_url('Account/reset') ?>" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= $akun['id']; ?>">
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="nama">Password [Rubah password untuk mereset]</label>
+                    <input type="password" name='password' value="<?= $akun['password']; ?>" class="form-control" id="password">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <button type="submit" name="Tambah" class="btn btn-danger col-md-12">Reset Password</button>
+                  </div>
+              </form>
+            </div>
           </div> <!-- /. card -->
         </div> <!-- /. col -->
       </div>

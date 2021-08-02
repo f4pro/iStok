@@ -33,11 +33,20 @@ class Account extends CI_Controller
         $data = [
             'email' => $this->input->post('email'),
             'status' => $this->input->post('status'),
+        ];
+        $id = $this->input->post('id');
+        $this->Akun_model->update(['id' => $id], $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data akun berhasil dirubah!</div>');
+        redirect('Account');
+    }
+
+    function reset(){
+        $data = [
             'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
         ];
         $id = $this->input->post('id');
         $this->Akun_model->update(['id' => $id], $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Barang Berhasil DiUbah!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Password Berhasil DiUbah!</div>');
         redirect('Account');
     }
 }
