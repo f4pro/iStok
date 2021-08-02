@@ -5,7 +5,7 @@ class SupportKar extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        is_logged_in();
+        is_logged_in2();
         $this->load->model('Support_model');
         $this->load->model('User_model');
         $this->load->model('Karyawan_model');
@@ -17,7 +17,7 @@ class SupportKar extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['support'] = $this->Support_model->get();
         $this->load->view("layout/header", $data);
-        $this->load->view("lapor/vw_support", $data);
+        $this->load->view("lapor/vw_supportKar", $data);
         $this->load->view("layout/footer", $data);
     }
     function edit($id)
@@ -42,7 +42,7 @@ class SupportKar extends CI_Controller
             redirect('Support');
         }
     }
-    function tambah()
+    function tambahSupportKar()
     {
         $data['judul'] = "Form Laporan";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -60,9 +60,9 @@ class SupportKar extends CI_Controller
                 'jenis_support' => $this->input->post('jenis_support'),
                 'description' => $this->input->post('description')
             ];
-            $this->Support_model->tambah($data);
+            $this->Support_model->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Support berhasil diupdate</div>');
-            redirect('Support');
+            redirect('SupportKar');
         }
     }
     function hapus($id)
