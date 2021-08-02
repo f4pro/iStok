@@ -71,7 +71,7 @@ class Karyawan extends CI_Controller
         redirect('Karyawan');
     }
     function edit($id){
-        $data['judul'] = "Halaman Edit Mahasiswa";
+        $data['judul'] = "Halaman Edit Karyawan";
         $data['karyawan'] = $this->Karyawan_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 

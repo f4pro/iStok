@@ -31,8 +31,8 @@
                 <div class="form-group">
                   <label for="inputAddress2">Gambar</label>
                   <div class="custom-file">
-                    <input type="file" name="gambar" class="form-control" id="gambar">
-                    <label for="gambar" class="custom-file-label">Choose File</label>
+                      <input type="file" class="custom-file-input" name="gambar" id="gambar">
+                      <label for="gambar" class="custom-file-label">Choose File</label>
                   </div>
                 </div>
                 <div class="form-row">
